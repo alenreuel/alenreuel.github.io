@@ -5,7 +5,7 @@ import type { educationEntry, profile, workExp } from "@/types";
 import { WorkExperiencePage } from "./pages/workExperience";
 import { ProjectsPage } from "./pages/projects";
 import { Profile } from "./pages/profile";
-import { Anchor, Typography } from "antd";
+import { Anchor, ConfigProvider, Typography } from "antd";
 const { Link } = Anchor;
 const { Text } = Typography;
 
@@ -70,27 +70,44 @@ function NavigationBar({
       title: "Projects",
     },
   ];
-  const className: string = "font-mono text-white";
+  const className: string = "font-mono text-white text-xl";
   return (
-    <div className="mx-2">
-      <Anchor
-        affix={false}
-        direction="horizontal"
-        getContainer={() => ref.current || window}
-      >
-        <Link
-          href="#work-exp"
-          title={<span className={className}>Work Experience</span>}
-        />
-        <Link
-          href="#education"
-          title={<span className={className}>Education</span>}
-        />
-        <Link
-          href="#projects"
-          title={<span className={className}>Projects</span>}
-        />
-      </Anchor>
-    </div>
+    <ConfigProvider
+      theme={{
+        components: {
+          Anchor: {
+            colorTextActive: "#fffffff0",
+            colorPrimary: "#fffffff0",
+            colorLinkHover: "#fffffff0",
+          },
+        },
+      }}
+    >
+      <div className="flex flex-row justify-between p-0">
+        <div className="text-white font-mono text-3xl mx-10 p-0">
+          {"<Alen />"}
+        </div>
+        <div className="mx-10 ">
+          <Anchor
+            affix={false}
+            direction="horizontal"
+            getContainer={() => ref.current || window}
+          >
+            <Link
+              href="#work-exp"
+              title={<span className={className}>Work Experience</span>}
+            />
+            <Link
+              href="#education"
+              title={<span className={className}>Education</span>}
+            />
+            <Link
+              href="#projects"
+              title={<span className={className}>Projects</span>}
+            />
+          </Anchor>
+        </div>
+      </div>
+    </ConfigProvider>
   );
 }
