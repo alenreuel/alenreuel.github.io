@@ -1,0 +1,69 @@
+import { Card } from "antd";
+import { useEffect, useState, type ReactNode } from "react";
+import type { educationEntry } from "@/types";
+
+function EducationQualificationCard({
+  educationEntry,
+}: {
+  educationEntry: educationEntry;
+}): ReactNode {
+  return (
+    <div className="h-[150px] w-[600px] my-2 ">
+      <Card className="h-full w-full">
+        <div className="flex flex-row ">
+          <div>
+            <img src={educationEntry.imageURL} height={80} width={80}></img>
+          </div>
+          <div className="px-3 py-0  flex flex-col justify-between h-full w-full">
+            <div className="text-l font-mono font-bold flex justify-between w-full">
+              <div>{educationEntry.university_name}</div>
+              <div className="text-m font-mono font-light italic">{`${educationEntry.start} \u2014 ${educationEntry.end}`}</div>
+            </div>
+            <h1 className="text-m font-mono font-light">
+              {`${educationEntry.qualification}`}
+            </h1>
+            <h1 className="text-m font-mono font-light">
+              {`GPA: ${educationEntry.gpa}`}
+            </h1>
+
+            {educationEntry.awards.length > 0 ? (
+              <h1 className="text-m font-mono font-light">
+                <span>{`Awards: `}</span>
+                {educationEntry.awards.map((award, idx) =>
+                  idx < educationEntry.length - 1 ? (
+                    <span className="text-m font-mono font-light">{`${award}, `}</span>
+                  ) : (
+                    <span className="text-m font-mono font-light">{`${award}`}</span>
+                  ),
+                )}
+              </h1>
+            ) : null}
+          </div>
+        </div>
+      </Card>
+    </div>
+  );
+}
+
+export function EducationPage({
+  educationData,
+}: {
+  educationData: Promise<educationEntry[]>;
+}): ReactNode {
+  const [eduData, setEduData] = useState<educationEntry[]>([]);
+
+  useEffect(() => {
+    educationData.then((data) => setEduData(data));
+  }, [educationData]);
+
+  return (
+    <>
+      <div className="flex flex-col m-10 p-10">
+        <h1 className="font-mono text-4xl">{`Education`}</h1>
+        {eduData.map((value) => (
+          <EducationQualificationCard educationEntry={value} />
+        ))}
+      </div>
+    </>
+  );
+}
