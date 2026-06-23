@@ -1,0 +1,26 @@
+[
+  {
+    "organizationName": "Aleph Technologies",
+    "start": 2025,
+    "end": 2026,
+    "role": "Software Engineering Intern - Backend and ML",
+    "responsibilites": "Built the MLOps pipeline to automate model training, monitoring and deployment.",
+    "imageURL": "https://media.licdn.com/dms/image/v2/C560BAQFsAxevcWEIeA/company-logo_200_200/company-logo_200_200/0/1640454711802?e=1783555200&v=beta&t=DGarFMM0PgMc5R7zhPSnn5BS-keCzQrWT--7c81Esgw"
+  },
+  {
+    "organizationName": "National University of Singapore",
+    "start": 2023,
+    "end": 2025,
+    "role": "Research Engineer - Applied ML",
+    "responsibilites": "Researched about the application of machine learning to improve equipment calibration time.",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b9/NUS_coat_of_arms.svg/1280px-NUS_coat_of_arms.svg.png"
+  },
+  {
+    "organizationName": "Micron Semiconductor Asia Pte Ltd.",
+    "start": 2022,
+    "end": 2023,
+    "role": "Process and Equipment Engineer - Dry Etch",
+    "responsibilites": "Monitored the product line, resolved process issues and qualified equipment for production.",
+    "imageURL": "https://media.licdn.com/dms/image/v2/D560BAQGfQ4M3evQz-g/company-logo_200_200/company-logo_200_200/0/1728389136980?e=1783555200&v=beta&t=kiF886V3b6BFVgyC4R6W9D4Bmw_Jui2H1xH8hvEhdjk"
+  }
+]

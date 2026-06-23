@@ -1,6 +1,7 @@
 import { Card } from "antd";
 import { useEffect, useState, type ReactNode } from "react";
 import type { educationEntry } from "@/types";
+import { Separator } from "@/components/ui/separator";
 
 function EducationQualificationCard({
   educationEntry,
@@ -22,22 +23,25 @@ function EducationQualificationCard({
             <h1 className="text-m font-mono font-light">
               {`${educationEntry.qualification}`}
             </h1>
-            <h1 className="text-m font-mono font-light">
-              {`GPA: ${educationEntry.gpa}`}
-            </h1>
-
-            {educationEntry.awards.length > 0 ? (
+            <Separator />
+            <div className="flex flex-col py-2">
               <h1 className="text-m font-mono font-light">
-                <span>{`Awards: `}</span>
-                {educationEntry.awards.map((award, idx) =>
-                  idx < educationEntry.length - 1 ? (
-                    <span className="text-m font-mono font-light">{`${award}, `}</span>
-                  ) : (
-                    <span className="text-m font-mono font-light">{`${award}`}</span>
-                  ),
-                )}
+                {`GPA: ${educationEntry.gpa}`}
               </h1>
-            ) : null}
+
+              {educationEntry.awards.length > 0 ? (
+                <h1 className="text-m font-mono font-light">
+                  <span>{`Awards: `}</span>
+                  {educationEntry.awards.map((award, idx) =>
+                    idx < educationEntry.length - 1 ? (
+                      <span className="text-m font-mono font-light">{`${award}, `}</span>
+                    ) : (
+                      <span className="text-m font-mono font-light">{`${award}`}</span>
+                    ),
+                  )}
+                </h1>
+              ) : null}
+            </div>
           </div>
         </div>
       </Card>
