@@ -30,8 +30,10 @@ function WorkExperienceCard({ workExp }: { workExp: workExp }): ReactNode {
 
 export function WorkExperiencePage({
   workExperienceData,
+  id,
 }: {
   workExperienceData: Promise<workExp[]>;
+  id: string;
 }): ReactNode {
   const [workData, setWorkData] = useState<workExp[]>([]);
 
@@ -41,7 +43,7 @@ export function WorkExperiencePage({
 
   return (
     <>
-      <div className="flex flex-col m-10 p-10">
+      <div className="flex flex-col m-10 w-full" id={id}>
         <h1 className="font-mono text-4xl">{`Work Experience`}</h1>
         {workData.map((value) => (
           <WorkExperienceCard workExp={value} />

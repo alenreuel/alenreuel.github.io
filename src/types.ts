@@ -25,3 +25,11 @@ export type projects = {
   youtubeLink: string;
   skills?: string[];
 };
+
+export type profile = {
+  name: string;
+  bioPhotoURL: string;
+  LinkedIn: string;
+  Github: string;
+  Bio: string;
+};

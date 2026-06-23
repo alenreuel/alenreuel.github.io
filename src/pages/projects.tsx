@@ -6,9 +6,9 @@ import { Separator } from "@/components/ui/separator";
 
 function ProjectCard({ project }: { project: projects }): ReactNode {
   return (
-    <div className="w-[350px] h-[500px] flex flex-col justify-between m-2 p-2 border-1 rounded-md">
+    <div className="w-2/7 h-[400px] flex flex-col justify-between border-1 m-1 rounded-md">
       <div className="flex flex-col items-center basis-3/7 h-3/7 p-2">
-        <h1 className="text-l font-mono font-bold text-center mb-2 h-1/4">
+        <h1 className="text-m font-mono font-bold text-center mb-2 h-1/4">
           {project.projectName}
         </h1>
         <img
@@ -19,19 +19,15 @@ function ProjectCard({ project }: { project: projects }): ReactNode {
         ></img>
       </div>
 
-      <div className="text-m font-mono font-light text-center overflow-scroll m-2 basis-3/7">
+      <div className="text-xs font-mono font-light text-center overflow-scroll m-2 basis-3/7">
         <Separator />
         <div className="p-2">{project.projectDescription}</div>
       </div>
 
       <div className="flex flex-col gap-3 pt-3 border-t basis-1/7">
-        <div className="flex flex-row flex-wrap justify-center gap-1">
+        <div className="flex flex-row flex-wrap justify-center gap-1 text-xs">
           {project.skills &&
-            project.skills.map((tag) => (
-              <Tag key={tag} className="text-xs">
-                {tag}
-              </Tag>
-            ))}
+            project.skills.map((tag) => <Tag key={tag}>{tag}</Tag>)}
         </div>
         <div className="flex flex-row justify-center gap-4">
           {project.githubLink && (
@@ -62,8 +58,10 @@ function ProjectCard({ project }: { project: projects }): ReactNode {
 
 export function ProjectsPage({
   projectsData,
+  id,
 }: {
   projectsData: Promise<projects[]>;
+  id: string;
 }): ReactNode {
   const [projects, setProjects] = useState<projects[]>([]);
 
@@ -73,9 +71,9 @@ export function ProjectsPage({
 
   return (
     <>
-      <div className="flex flex-col m-10 p-10">
+      <div className="flex flex-col m-10 w-full" id={id}>
         <h1 className="font-mono text-4xl mb-6">{`Projects`}</h1>
-        <div className=" flex flex-row flex-wrap items-start">
+        <div className=" flex flex-row flex-wrap w-full items-start ">
           {projects.map((project, idx) => (
             <ProjectCard key={idx} project={project} />
           ))}

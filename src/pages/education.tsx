@@ -51,8 +51,10 @@ function EducationQualificationCard({
 
 export function EducationPage({
   educationData,
+  id,
 }: {
   educationData: Promise<educationEntry[]>;
+  id: string;
 }): ReactNode {
   const [eduData, setEduData] = useState<educationEntry[]>([]);
 
@@ -62,7 +64,7 @@ export function EducationPage({
 
   return (
     <>
-      <div className="flex flex-col m-10 p-10">
+      <div className="flex flex-col m-10" id={id}>
         <h1 className="font-mono text-4xl">{`Education`}</h1>
         {eduData.map((value) => (
           <EducationQualificationCard educationEntry={value} />
