@@ -16,3 +16,12 @@ export type workExp = {
   responsibilites: string;
   imageURL: string;
 };
+
+export type projects = {
+  projectName: string;
+  projectDescription: string;
+  imgURL: string;
+  githubLink: string;
+  youtubeLink: string;
+  skills?: string[];
+};

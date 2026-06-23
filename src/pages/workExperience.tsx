@@ -7,7 +7,7 @@ function WorkExperienceCard({ workExp }: { workExp: workExp }): ReactNode {
   return (
     <div className="h-[150px] w-[600px] my-2 ">
       <Card className="h-full w-full">
-        <div className="flex flex-row ">
+        <div className="flex flex-row flex-nowrap items-center">
           <div className="[150px]">
             <img src={workExp.imageURL} height={80} width={80}></img>
           </div>

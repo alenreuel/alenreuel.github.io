@@ -1,0 +1,83 @@
+[
+  {
+    "projectName": "Skillspulse - AI Powered Learning Assistant",
+    "projectDescription": "An AI-powered browser extension that creates enables personalized learning. Allows users to create personalized goals, summarize web content and youtube videos, generate quizzes and track user metrics.",
+    "imgURL": "/src/assets/skillspulse.jpeg",
+    "githubLink": "https://github.com/IT5007-2520/course-project-skillpulse/tree/main",
+    "youtubeLink": "https://www.youtube.com/watch?v=zgIi6AIUF1c",
+    "skills": ["Langchain", "FastAPI", "React", "Docker"]
+  },
+  {
+    "projectName": "Multi-Modal Representation Learning (CLIP)",
+    "projectDescription": "Benchmarked and fine-tuned OpenAI CLIP model for image and text retrieval tasks.",
+    "imgURL": "https://towardsdatascience.com/wp-content/uploads/2023/10/150eEmi8uXY_vRdp_-yeK4Q.png",
+    "githubLink": "",
+    "youtubeLink": "",
+    "skills": ["PyTorch", "Contrastive Learning", "Deep Learning"]
+  },
+  {
+    "projectName": "Peer-to-Peer Maze Game",
+    "projectDescription": "Distributed maze game with fault-tolerant state management and real-time P2P communication.",
+    "imgURL": "https://lh3.ggpht.com/zLNDObYml4BKn4PbmDUC7HP_WNyODqzlEC0rK1wgWUk5bRGL4AMMaL5ugICGi_jteL1r1-UHWqL5P2Uzmac3DyzQRv55dFU7J5V_QA",
+    "githubLink": "",
+    "youtubeLink": "",
+    "skills": [
+      "Java",
+      "Peer-to-Peer Architecture",
+      "Remote Procedural Calls(RPCs)"
+    ]
+  },
+  {
+    "projectName": "Task Management App",
+    "projectDescription": "Full-stack task management application with user authentication and RESTful API.",
+    "imgURL": "https://raw.githubusercontent.com/alenreuel/toDoList/refs/heads/main/images/uiScreenShot.png",
+    "githubLink": "https://github.com/alenreuel/toDoList",
+    "youtubeLink": "",
+    "skills": ["HTML", "Javascript", "CSS", "SQL"]
+  },
+  {
+    "projectName": "Brain Tumor Classification",
+    "projectDescription": "Deep learning model for brain tumor detection and classification using PyTorch.",
+    "imgURL": "/src/assets/brainTumorProject.png",
+    "githubLink": "https://github.com/alenreuel/data_science_projects/blob/main/brain_tumor_classification_MRI/Brain_Tumor_Notebook.ipynb",
+    "youtubeLink": "",
+    "skills": ["PyTorch", "Computer Vision"]
+  },
+  {
+    "projectName": "Reddit AI Assistant Bot",
+    "projectDescription": "AI bot that answers Reddit questions using Llama3 language model.",
+    "imgURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTysTWZefCwcIUlDYKRtLgBFGEy2baTrwhhtp5YXWYUflDG0AhASooO3k7V&s=10",
+    "githubLink": "https://github.com/alenreuel/reddit_bot",
+    "youtubeLink": "",
+    "skills": ["Ollama", "SQL", "Social Media Bot"]
+  },
+  {
+    "projectName": "Airport Network Analysis",
+    "projectDescription": "Graph-based analysis of global flight networks using clustering and centrality metrics.",
+    "imgURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTamgvaWS7OkWmoFw9WNUR4pmyeaq41svTfV34tzViF8G4j1_M7oKkqyfw&s=10",
+    "githubLink": "https://github.com/alenreuel/data_science_projects/blob/main/airline_network_analysis/airline%20network%20analysis.ipynb",
+    "youtubeLink": "",
+    "skills": ["Graph Theory", "Data Analysis", "Clustering"]
+  },
+  {
+    "projectName": "ChatGPT Tweets Sentiment Analysis",
+    "projectDescription": "Sentiment analysis and topic modeling on 500,000 ChatGPT-related tweets.",
+    "imgURL": "https://cdn.prod.website-files.com/61436206a95bd10922bde560/66d2148fae0a661745b4fa35_Sentiment%20analysis.png",
+    "githubLink": "https://github.com/alenreuel/data_science_projects/blob/main/chatGPT_tweet_sentiment_analysis/ChatGPTSentiment_Analysis.ipynb",
+    "youtubeLink": "",
+    "skills": [
+      "Natural Language Processing",
+      "NLTK",
+      "Sentiment Analysis",
+      "Topic Modelling"
+    ]
+  },
+  {
+    "projectName": "GDM Exploratory Analysis and Prediction Model",
+    "projectDescription": "Machine learning model to predict gestational diabetes mellitus in pregnant women.",
+    "imgURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEtU_0XEeK8WFWkmNFCmMjDLMqwKCqzrzbOypgHzsWkw&s=10",
+    "githubLink": "https://github.com/alenreuel/data_science_projects/tree/main/GDM_prediction_visceral_fat_measurements",
+    "youtubeLink": "",
+    "skills": ["scikit-learn", "Machine Learning", "Data Analysis"]
+  }
+]

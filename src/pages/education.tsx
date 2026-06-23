@@ -11,7 +11,7 @@ function EducationQualificationCard({
   return (
     <div className="h-[150px] w-[600px] my-2 ">
       <Card className="h-full w-full">
-        <div className="flex flex-row ">
+        <div className="flex flex-row items-center ">
           <div>
             <img src={educationEntry.imageURL} height={80} width={80}></img>
           </div>
