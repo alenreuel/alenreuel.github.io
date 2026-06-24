@@ -9,7 +9,7 @@ function EducationQualificationCard({
   educationEntry: educationEntry;
 }): ReactNode {
   return (
-    <div className="h-[150px] w-[600px] my-2 ">
+    <div className="h-1/4 w-2/3 my-2 ">
       <Card className="h-full w-full">
         <div className="flex flex-row items-center ">
           <div>
@@ -64,7 +64,7 @@ export function EducationPage({
 
   return (
     <>
-      <div className="flex flex-col m-10" id={id}>
+      <div className="flex flex-col m-10 w-full" id={id}>
         <h1 className="font-mono text-4xl">{`Education`}</h1>
         {eduData.map((value) => (
           <EducationQualificationCard educationEntry={value} />

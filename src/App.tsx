@@ -85,7 +85,7 @@ function NavigationBar({
     >
       <div className="flex flex-row justify-between p-0">
         <div className="text-white font-mono text-3xl mx-10 p-0">
-          {"<Alen />"}
+          {"<Alen Reuel/>"}
         </div>
         <div className="mx-10 ">
           <Anchor
