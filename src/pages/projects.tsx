@@ -73,7 +73,7 @@ export function ProjectsPage({
     <>
       <div className="flex flex-col m-10 w-full" id={id}>
         <h1 className="font-mono text-4xl mb-6">{`Projects`}</h1>
-        <div className=" flex flex-row flex-wrap w-full items-start ">
+        <div className=" flex flex-row flex-wrap w-full items-start gap-10">
           {projects.map((project, idx) => (
             <ProjectCard key={idx} project={project} />
           ))}

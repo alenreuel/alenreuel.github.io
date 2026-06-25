@@ -30,8 +30,9 @@ export function SkillsTab({ data }: { data: Promise<skill[]> }): ReactNode {
     <div className="flex flex-col gap-2 bg-black ">
       {skills.map((category) => (
         <div key={category}>
-          <Splitter className="bg-white border-1" />
-          <h2 className="text-sm font-bold text-white bg-black font-mono mx-2">
+          <Splitter className="bg-white border-1 m-3" />
+
+          <h2 className="text-sm font-bold italic text-white bg-black font-mono mx-2">
             {category}
           </h2>
           <div className="flex flex-col gap-1 text-white bg-black">

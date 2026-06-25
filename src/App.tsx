@@ -33,19 +33,19 @@ function App() {
         <div className="bg-black w-full h-1/20 ">
           {containerRef && <NavigationBar refContainer={containerRef} />}
         </div>
-        <div className="grid grid-flow-col grid-cols-8 gap-2 h-19/20 w-full ">
-          <div className="col-span-2 border-1 h-full overflow-hidden">
+        <div className="grid grid-flow-col grid-cols-13 gap-2 h-19/20 w-full ">
+          <div className="col-span-3 border-1 h-full overflow-hidden">
             <Profile profileData={bio} />
           </div>
           <div
-            className="col-span-5 h-full overflow-x-hidden ml-10"
+            className="col-span-8 h-full overflow-x-hidden ml-10"
             ref={containerRef}
           >
             <WorkExperiencePage workExperienceData={workEntry} id="work-exp" />
             <EducationPage educationData={eduEntry} id="education" />
             <ProjectsPage projectsData={projectsEntry} id="projects" />
           </div>
-          <div className="col-span-1 border-1 h-full overflow-hidden bg-black border-black">
+          <div className="col-span-2 border-1 h-full overflow-hidden bg-black border-black">
             <SkillsTab data={skills} />
           </div>
         </div>
@@ -76,7 +76,7 @@ function NavigationBar({
     >
       <div className="flex flex-row justify-between p-0">
         <div className="text-white font-mono text-3xl mx-10 p-0 ">
-          {"<Alen Reuel/>"}
+          {<span className="typewriter">{"<Alen Reuel/>"}</span>}
         </div>
         <div className="mx-10 ">
           <Anchor
