@@ -1,5 +1,6 @@
 import type { skill } from "@/types";
 import type { ReactNode } from "react";
+import { Splitter } from "antd";
 import { useEffect, useState } from "react";
 
 export function SkillsTab({ data }: { data: Promise<skill[]> }): ReactNode {
@@ -26,9 +27,10 @@ export function SkillsTab({ data }: { data: Promise<skill[]> }): ReactNode {
   );
 
   return (
-    <div className="flex flex-col gap-2 bg-black">
+    <div className="flex flex-col gap-2 bg-black ">
       {skills.map((category) => (
         <div key={category}>
+          <Splitter className="bg-white border-1" />
           <h2 className="text-sm font-bold text-white bg-black font-mono mx-2">
             {category}
           </h2>
@@ -42,7 +44,7 @@ export function SkillsTab({ data }: { data: Promise<skill[]> }): ReactNode {
                     className="w-6 h-6 flex-shrink-0 object-contain bg-white rounded ml-2"
                   />
                 )}
-                <p className="text-xs font-medium  overflow-hidden text-ellipsis">
+                <p className="text-xs font-mono overflow-hidden ">
                   {skill.skill}
                 </p>
               </div>

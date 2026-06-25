@@ -9,7 +9,7 @@ function EducationQualificationCard({
   educationEntry: educationEntry;
 }): ReactNode {
   return (
-    <div className="h-1/4 w-5/7 my-2 ">
+    <div className="h-1/4 w-6/7 my-2 ">
       <Card className="h-full w-full">
         <div className="flex flex-row items-center ">
           <div>
