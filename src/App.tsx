@@ -27,7 +27,7 @@ function App() {
   );
   return (
     <>
-      <div className="h-screen w-screen ">
+      <div className="h-screen w-full ">
         <div className="bg-black w-full h-1/20 ">
           {containerRef && <NavigationBar ref={containerRef} />}
         </div>
@@ -35,7 +35,10 @@ function App() {
           <div className="col-span-2 border-1 h-full">
             <Profile profileData={bio} />
           </div>
-          <div className="col-span-5 h-full overflow-scroll" ref={containerRef}>
+          <div
+            className="col-span-5 h-full overflow-x-hidden"
+            ref={containerRef}
+          >
             <WorkExperiencePage workExperienceData={workEntry} id="work-exp" />
             <EducationPage educationData={eduEntry} id="education" />
             <ProjectsPage projectsData={projectsEntry} id="projects" />

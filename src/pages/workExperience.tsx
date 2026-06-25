@@ -5,7 +5,7 @@ import type { workExp } from "@/types";
 
 function WorkExperienceCard({ workExp }: { workExp: workExp }): ReactNode {
   return (
-    <div className="h-1/4 w-2/3 my-2 ">
+    <div className="h-1/4 w-4/5 my-2 ">
       <Card className="h-full w-full">
         <div className="flex flex-row flex-nowrap items-center">
           <div className="[150px]">
