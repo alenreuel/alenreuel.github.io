@@ -1,15 +1,13 @@
-import { useState, useRef, type RefObject } from "react";
+import { useRef, type RefObject } from "react";
 import "./App.css";
 import { EducationPage } from "./pages/education";
 import type { educationEntry, profile, workExp } from "@/types";
 import { WorkExperiencePage } from "./pages/workExperience";
 import { ProjectsPage } from "./pages/projects";
 import { Profile } from "./pages/profile";
-import { Anchor, ConfigProvider, Typography } from "antd";
+import { Anchor, ConfigProvider } from "antd";
 const { Link } = Anchor;
-const { Text } = Typography;
 
-import type { AnchorLinkItemProps } from "antd/es/anchor/Anchor";
 function App() {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -29,19 +27,22 @@ function App() {
     <>
       <div className="h-screen w-full ">
         <div className="bg-black w-full h-1/20 ">
-          {containerRef && <NavigationBar ref={containerRef} />}
+          {containerRef && <NavigationBar refContainer={containerRef} />}
         </div>
-        <div className="grid grid-flow-col grid-cols-7 gap-1 h-19/20 w-full ">
-          <div className="col-span-2 border-1 h-full">
+        <div className="grid grid-flow-col grid-cols-8 gap-2 h-19/20 w-full ">
+          <div className="col-span-2 border-1 h-full overflow-hidden">
             <Profile profileData={bio} />
           </div>
           <div
-            className="col-span-5 h-full overflow-x-hidden"
+            className="col-span-5 h-full overflow-x-hidden ml-10"
             ref={containerRef}
           >
             <WorkExperiencePage workExperienceData={workEntry} id="work-exp" />
             <EducationPage educationData={eduEntry} id="education" />
             <ProjectsPage projectsData={projectsEntry} id="projects" />
+          </div>
+          <div className="col-span-1 border-1 h-full overflow-hidden">
+            <Profile profileData={bio} />
           </div>
         </div>
       </div>
@@ -52,27 +53,10 @@ function App() {
 export default App;
 
 function NavigationBar({
-  ref,
+  refContainer,
 }: {
-  ref: RefObject<HTMLDivElement | null>;
+  refContainer: RefObject<HTMLDivElement | null>;
 }): React.ReactNode {
-  const keyItems: AnchorLinkItemProps[] = [
-    {
-      key: "work-exp",
-      href: "#work-exp",
-      title: "Work Experience",
-    },
-    {
-      key: "education",
-      href: "#education",
-      title: "Education",
-    },
-    {
-      key: "projects",
-      href: "#projects",
-      title: "Projects",
-    },
-  ];
   const className: string = "font-mono text-white text-xl";
   return (
     <ConfigProvider
@@ -94,7 +78,7 @@ function NavigationBar({
           <Anchor
             affix={false}
             direction="horizontal"
-            getContainer={() => ref.current || window}
+            getContainer={() => refContainer.current || window}
           >
             <Link
               href="#work-exp"

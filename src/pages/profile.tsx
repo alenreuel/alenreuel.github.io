@@ -21,8 +21,6 @@ export function Profile({ profileData }: { profileData: profile }) {
       </div>
 
       <div className="flex flex-col gap-4 basis-4/8">
-        <h1 className="text-4xl font-mono font-bold">{profileData.name}</h1>
-
         <p className="text-m font-mono px-5">{bio?.Bio}</p>
 
         <div className="flex flex-row gap-6 px-5 basis-1/8">
