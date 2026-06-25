@@ -33,3 +33,9 @@ export type profile = {
   Github: string;
   Bio: string;
 };
+
+export type skill = {
+  skill: string;
+  parent_skill: string;
+  icon_url: string;
+};

@@ -1,11 +1,12 @@
 import { useRef, type RefObject } from "react";
 import "./App.css";
 import { EducationPage } from "./pages/education";
-import type { educationEntry, profile, workExp } from "@/types";
+import type { educationEntry, profile, skill, workExp } from "@/types";
 import { WorkExperiencePage } from "./pages/workExperience";
 import { ProjectsPage } from "./pages/projects";
 import { Profile } from "./pages/profile";
 import { Anchor, ConfigProvider } from "antd";
+import { SkillsTab } from "./pages/skills";
 const { Link } = Anchor;
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
     (response) => response.json(),
   );
   const bio: Promise<profile> = fetch("/data/bio.json").then((response) =>
+    response.json(),
+  );
+  const skills: Promise<skill[]> = fetch("/data/skills.json").then((response) =>
     response.json(),
   );
   return (
@@ -41,8 +45,8 @@ function App() {
             <EducationPage educationData={eduEntry} id="education" />
             <ProjectsPage projectsData={projectsEntry} id="projects" />
           </div>
-          <div className="col-span-1 border-1 h-full overflow-hidden">
-            <Profile profileData={bio} />
+          <div className="col-span-1 border-1 h-full overflow-hidden bg-black border-black">
+            <SkillsTab data={skills} />
           </div>
         </div>
       </div>
