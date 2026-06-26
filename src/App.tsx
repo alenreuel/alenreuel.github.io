@@ -45,7 +45,7 @@ function App() {
             <EducationPage educationData={eduEntry} id="education" />
             <ProjectsPage projectsData={projectsEntry} id="projects" />
           </div>
-          <div className="col-span-2 border-1 h-full overflow-hidden ml-3">
+          <div className="col-span-3 border-1 h-full overflow-hidden ml-3">
             <SkillsTab data={skills} />
           </div>
         </div>

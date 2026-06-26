@@ -1,6 +1,6 @@
 import type { skill } from "@/types";
+import { Car } from "lucide-react";
 import type { ReactNode } from "react";
-import { Splitter } from "antd";
 import { useEffect, useState } from "react";
 
 export function SkillsTab({ data }: { data: Promise<skill[]> }): ReactNode {
@@ -32,31 +32,44 @@ export function SkillsTab({ data }: { data: Promise<skill[]> }): ReactNode {
     <div className="flex flex-col gap-2 ">
       {skills.map((category) => (
         <div key={category}>
-          <h2 className="text-sm font-bold  font-mono ml-3">
-            {category.toUpperCase()}
-          </h2>
-          <div className="h-[1px] border-1 ml-3 mb-1" />
+          <SkillHeader cat={category} />
+
           <div className="flex flex-row flex-wrap gap-1 mx-3 ">
             {skillsMap[category]?.map((skill) => (
-              <div
-                key={skill.skill}
-                className="flex flex-row items-center gap-1 border-1 rounded "
-              >
-                {skill.icon_url && (
-                  <img
-                    src={skill.icon_url}
-                    alt={skill.skill}
-                    className="size-3 flex-shrink-0 object-contain bg-white rounded ml-1"
-                  />
-                )}
-                <p className="text-xs font-mono overflow-hidden mr-1">
-                  {skill.skill}
-                </p>
-              </div>
+              <SkillTag skillSpec={skill} />
             ))}
           </div>
         </div>
       ))}
+    </div>
+  );
+}
+
+function SkillHeader({ cat }: { cat: string }): ReactNode {
+  return (
+    <>
+      <h2 className="text-sm  font-mono ml-3 mr-2">{cat.toUpperCase()}</h2>
+      <div className="h-[1px] border-1 mx-3 mb-1" />
+    </>
+  );
+}
+
+function SkillTag({ skillSpec }: { skillSpec: skill }): ReactNode {
+  return (
+    <div
+      key={skillSpec.skill}
+      className="flex flex-row items-center gap-1 border-1 rounded "
+    >
+      {skillSpec.icon_url && (
+        <img
+          src={skillSpec.icon_url}
+          alt={skillSpec.skill}
+          className="size-3 flex-shrink-0 object-contain bg-white rounded ml-1"
+        />
+      )}
+      <p className="text-xs font-mono overflow-hidden mr-1">
+        {skillSpec.skill}
+      </p>
     </div>
   );
 }
