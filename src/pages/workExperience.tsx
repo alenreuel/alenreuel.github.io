@@ -1,4 +1,5 @@
-import { Card, Splitter } from "antd";
+import { Card } from "antd";
+import { InfoCircleOutlined } from "@ant-design/icons";
 import { Separator } from "@/components/ui/separator";
 import { useEffect, useState, type ReactNode } from "react";
 import type { workExp } from "@/types";
@@ -6,7 +7,7 @@ import type { workExp } from "@/types";
 function WorkExperienceCard({ workExp }: { workExp: workExp }): ReactNode {
   return (
     <div className="h-1/4 w-6/7 my-2 ">
-      <Card className="h-full w-full">
+      <Card className="h-full w-full relative">
         <div className="flex flex-row flex-nowrap items-center">
           <div className="[150px]">
             <img src={workExp.imageURL} height={80} width={80}></img>
@@ -23,6 +24,7 @@ function WorkExperienceCard({ workExp }: { workExp: workExp }): ReactNode {
             </div>
           </div>
         </div>
+        <InfoCircleOutlined className="absolute bottom-3 right-3 !text-violet-600 cursor-pointer" />
       </Card>
     </div>
   );
