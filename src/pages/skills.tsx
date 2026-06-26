@@ -28,7 +28,7 @@ export function SkillsTab({ data }: { data: Promise<skill[]> }): ReactNode {
   );
 
   return (
-    <div className="flex flex-col gap-2 mt-10">
+    <div className="flex flex-col gap-2 mt-10 select-none">
       {skills.map((category) => (
         <div key={category}>
           <SkillHeader cat={category} />
