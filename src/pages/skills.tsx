@@ -1,5 +1,4 @@
 import type { skill } from "@/types";
-import { Car } from "lucide-react";
 import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
 
@@ -29,7 +28,7 @@ export function SkillsTab({ data }: { data: Promise<skill[]> }): ReactNode {
   );
 
   return (
-    <div className="flex flex-col gap-2 ">
+    <div className="flex flex-col gap-2 mt-10">
       {skills.map((category) => (
         <div key={category}>
           <SkillHeader cat={category} />
@@ -51,7 +50,7 @@ function SkillHeader({ cat }: { cat: string }): ReactNode {
       <h2 className="text-sm text-violet-600 font-bold font-mono ml-3 mr-2">
         {cat.toUpperCase()}
       </h2>
-      <div className="h-[1px] border-1 mx-3 mb-1" />
+      <div className="h-[1px] border-1 mx-3 mb-1 border-gray-300" />
     </>
   );
 }
@@ -60,7 +59,7 @@ function SkillTag({ skillSpec }: { skillSpec: skill }): ReactNode {
   return (
     <div
       key={skillSpec.skill}
-      className="flex flex-row items-center gap-1 border-1 rounded "
+      className="flex flex-row items-center gap-1 border-1 rounded border-gray-300 bg-white"
     >
       {skillSpec.icon_url && (
         <img

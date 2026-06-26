@@ -30,7 +30,7 @@ function App() {
   return (
     <>
       <div className="h-screen w-full ">
-        <div className="bg-black w-full h-1/20 ">
+        <div className="bg-black w-full h-[37px] ">
           {containerRef && <NavigationBar refContainer={containerRef} />}
         </div>
         <div className="grid grid-flow-col grid-cols-13 gap-2 h-19/20 w-full mr-2">
@@ -45,7 +45,7 @@ function App() {
             <EducationPage educationData={eduEntry} id="education" />
             <ProjectsPage projectsData={projectsEntry} id="projects" />
           </div>
-          <div className="col-span-3 border-1 h-full overflow-hidden ml-3">
+          <div className="col-span-3 border-1 h-full overflow-hidden ml-3 bg-gray-100">
             <SkillsTab data={skills} />
           </div>
         </div>
