@@ -48,7 +48,9 @@ export function SkillsTab({ data }: { data: Promise<skill[]> }): ReactNode {
 function SkillHeader({ cat }: { cat: string }): ReactNode {
   return (
     <>
-      <h2 className="text-sm  font-mono ml-3 mr-2">{cat.toUpperCase()}</h2>
+      <h2 className="text-sm text-violet-600 font-bold font-mono ml-3 mr-2">
+        {cat.toUpperCase()}
+      </h2>
       <div className="h-[1px] border-1 mx-3 mb-1" />
     </>
   );

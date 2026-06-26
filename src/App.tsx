@@ -67,16 +67,22 @@ function NavigationBar({
       theme={{
         components: {
           Anchor: {
-            colorTextActive: "#fffffff0",
-            colorPrimary: "#fffffff0",
-            colorLinkHover: "#fffffff0",
+            colorTextActive: "#7C3AED",
+            colorPrimary: "#7C3AED",
+            colorLinkHover: "#7C3AED",
           },
         },
       }}
     >
       <div className="flex flex-row justify-between p-0">
         <div className="text-white font-mono text-3xl mx-10 p-0 ">
-          {<span className="typewriter">{"<Alen Reuel/>"}</span>}
+          {
+            <span className="typewriter">
+              <span className="text-violet-600">{"<"}</span>
+              {"Alen Reuel"}
+              <span className="text-violet-600">{"/>"}</span>
+            </span>
+          }
         </div>
         <div className="mx-10 ">
           <Anchor
