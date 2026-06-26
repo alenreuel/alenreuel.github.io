@@ -25,6 +25,11 @@
     "parent_skill": "Frontend Design",
     "icon_url": "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
   },
+  {
+    "skill": "Tailwind CSS",
+    "parent_skill": "Frontend Design",
+    "icon_url": "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg"
+  },
 
   {
     "skill": "FastAPI",
@@ -57,9 +62,19 @@
     "icon_url": "https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg"
   },
   {
-    "skill": "SQL",
+    "skill": "PostgreSQL",
     "parent_skill": "Databases",
-    "icon_url": "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg"
+    "icon_url": "https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg"
+  },
+  {
+    "skill": "MongoDB",
+    "parent_skill": "Databases",
+    "icon_url": "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg"
+  },
+  {
+    "skill": "Redis",
+    "parent_skill": "Databases",
+    "icon_url": "https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original.svg"
   },
   {
     "skill": "HTML",

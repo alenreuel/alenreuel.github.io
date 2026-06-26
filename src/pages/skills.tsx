@@ -22,30 +22,34 @@ export function SkillsTab({ data }: { data: Promise<skill[]> }): ReactNode {
   const skillsMap: Record<string, skill[]> = Object.fromEntries(
     skills.map((cat) => [
       cat,
-      skillsData.filter((val) => cat == val.parent_skill),
+      skillsData
+        .filter((val) => cat == val.parent_skill)
+        .sort((a, b) => a.skill.localeCompare(b.skill)),
     ]),
   );
 
   return (
-    <div className="flex flex-col gap-2 bg-black ">
+    <div className="flex flex-col gap-2 ">
       {skills.map((category) => (
         <div key={category}>
-          <Splitter className="bg-white border-1 m-3" />
-
-          <h2 className="text-sm font-bold italic text-white bg-black font-mono mx-2">
-            {category}
+          <h2 className="text-sm font-bold  font-mono ml-3">
+            {category.toUpperCase()}
           </h2>
-          <div className="flex flex-col gap-1 text-white bg-black">
+          <div className="h-[1px] border-1 ml-3 mb-1" />
+          <div className="flex flex-row flex-wrap gap-1 mx-3 ">
             {skillsMap[category]?.map((skill) => (
-              <div key={skill.skill} className="flex items-center gap-1">
+              <div
+                key={skill.skill}
+                className="flex flex-row items-center gap-1 border-1 rounded "
+              >
                 {skill.icon_url && (
                   <img
                     src={skill.icon_url}
                     alt={skill.skill}
-                    className="w-6 h-6 flex-shrink-0 object-contain bg-white rounded ml-2"
+                    className="size-3 flex-shrink-0 object-contain bg-white rounded ml-1"
                   />
                 )}
-                <p className="text-xs font-mono overflow-hidden ">
+                <p className="text-xs font-mono overflow-hidden mr-1">
                   {skill.skill}
                 </p>
               </div>
