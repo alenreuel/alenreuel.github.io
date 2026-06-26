@@ -33,19 +33,19 @@ function App() {
         <div className="bg-black w-full h-1/20 ">
           {containerRef && <NavigationBar refContainer={containerRef} />}
         </div>
-        <div className="grid grid-flow-col grid-cols-13 gap-2 h-19/20 w-full ">
+        <div className="grid grid-flow-col grid-cols-13 gap-2 h-19/20 w-full mr-2">
           <div className="col-span-3 border-1 h-full overflow-hidden">
             <Profile profileData={bio} />
           </div>
           <div
-            className="col-span-8 h-full overflow-x-hidden ml-10"
+            className="col-span-8 h-full overflow-x-hidden ml-2"
             ref={containerRef}
           >
             <WorkExperiencePage workExperienceData={workEntry} id="work-exp" />
             <EducationPage educationData={eduEntry} id="education" />
             <ProjectsPage projectsData={projectsEntry} id="projects" />
           </div>
-          <div className="col-span-2 border-1 h-full overflow-hidden ">
+          <div className="col-span-2 border-1 h-full overflow-hidden ml-3">
             <SkillsTab data={skills} />
           </div>
         </div>

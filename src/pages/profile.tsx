@@ -16,17 +16,17 @@ export function Profile({ profileData }: { profileData: profile }) {
         <img
           src={bio?.bioPhotoURL}
           alt={bio?.name}
-          className="w-64 h-64 rounded-full  object-contain"
+          className="h-[200px] w-[200px] rounded-full "
         />
       </div>
 
       <div className="flex flex-col gap-4 basis-4/8">
-        <p className="text-m font-mono px-5">{bio?.Bio}</p>
+        <p className="text-m font-mono px-1">{bio?.Bio}</p>
 
         <div className="flex flex-row gap-6 px-5 basis-1/8">
           {bio && (
             <a
-              href={bio.LinkedIn}
+              href={bio.LinkedIN}
               target="_blank"
               rel="noopener noreferrer"
               className="text-3xl hover:text-blue-600 transition"

@@ -29,7 +29,7 @@ export type projects = {
 export type profile = {
   name: string;
   bioPhotoURL: string;
-  LinkedIn: string;
+  LinkedIN: string;
   Github: string;
   Bio: string;
 };

@@ -6,7 +6,7 @@ import { Separator } from "@/components/ui/separator";
 
 function ProjectCard({ project }: { project: projects }): ReactNode {
   return (
-    <div className="w-2/7 h-[400px] flex flex-col justify-between border-1 m-1 rounded-md">
+    <div className="w-[250px] h-[400px] flex flex-col justify-between border-1 gap-2 rounded-md">
       <div className="flex flex-col items-center basis-3/7 h-3/7 p-2">
         <h1 className="text-m font-mono font-bold text-center mb-2 h-1/4">
           {project.projectName}
