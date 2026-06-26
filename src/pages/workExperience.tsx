@@ -1,4 +1,4 @@
-import { Card } from "antd";
+import { Card, Splitter } from "antd";
 import { Separator } from "@/components/ui/separator";
 import { useEffect, useState, type ReactNode } from "react";
 import type { workExp } from "@/types";
@@ -45,6 +45,8 @@ export function WorkExperiencePage({
     <>
       <div className="flex flex-col m-10 w-full" id={id}>
         <h1 className="font-mono text-4xl">{`Work Experience`}</h1>
+        <div className="border-1 w-6/7 border-violet-600" />
+
         {workData.map((value) => (
           <WorkExperienceCard workExp={value} />
         ))}

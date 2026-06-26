@@ -13,8 +13,8 @@ function ProjectCard({ project }: { project: projects }): ReactNode {
         </h1>
         <img
           src={project.imgURL}
-          width={200}
-          height={200}
+          width={150}
+          height={150}
           className="object-contain basis-3/4 h-3/4 w-inherit m-2"
         ></img>
       </div>
@@ -72,8 +72,10 @@ export function ProjectsPage({
   return (
     <>
       <div className="flex flex-col m-10 w-full" id={id}>
-        <h1 className="font-mono text-4xl mb-6">{`Projects`}</h1>
-        <div className=" flex flex-row flex-wrap w-full items-start gap-10">
+        <h1 className="font-mono text-4xl ">{`Projects`}</h1>
+        <div className="border-1 w-6/7 border-violet-600" />
+
+        <div className=" flex flex-row flex-wrap w-6/7 items-start gap-3 my-5">
           {projects.map((project, idx) => (
             <ProjectCard key={idx} project={project} />
           ))}
