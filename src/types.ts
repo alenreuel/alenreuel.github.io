@@ -24,6 +24,8 @@ export type projects = {
   imgURL: string;
   githubLink: string;
   youtubeLink: string;
+  liveLink?: string;
+  codeRestrictionReason?: string;
   skills?: string[];
 };
 
