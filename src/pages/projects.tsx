@@ -1,12 +1,16 @@
 import { Card, Tag } from "antd";
-import { GithubOutlined, YoutubeOutlined } from "@ant-design/icons";
+import {
+  GithubOutlined,
+  YoutubeOutlined,
+  InfoCircleOutlined,
+} from "@ant-design/icons";
 import { useEffect, useState, type ReactNode } from "react";
 import type { projects } from "@/types";
 import { Separator } from "@/components/ui/separator";
 
 function ProjectCard({ project }: { project: projects }): ReactNode {
   return (
-    <div className="w-[250px] h-[400px] flex flex-col justify-between border-1 gap-2 rounded-md">
+    <div className="w-[250px] h-[400px] flex flex-col justify-between border-1 gap-2 rounded-md relative">
       <div className="flex flex-col items-center basis-3/7 h-3/7 p-2">
         <h1 className="text-m font-mono font-bold text-center mb-2 h-1/4">
           {project.projectName}
@@ -19,39 +23,11 @@ function ProjectCard({ project }: { project: projects }): ReactNode {
         ></img>
       </div>
 
-      <div className="text-xs font-mono font-light text-center overflow-scroll m-2 basis-3/7">
+      <div className="text-xs font-mono text-left overflow-scroll m-2 basis-4/7">
         <Separator />
         <div className="p-2">{project.projectDescription}</div>
       </div>
-
-      <div className="flex flex-col gap-3 pt-3 border-t basis-1/7">
-        <div className="flex flex-row flex-wrap justify-center gap-1 text-xs">
-          {project.skills &&
-            project.skills.map((tag) => <Tag key={tag}>{tag}</Tag>)}
-        </div>
-        <div className="flex flex-row justify-center gap-4">
-          {project.githubLink && (
-            <a
-              href={project.githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-2xl hover:text-blue-500 transition"
-            >
-              <GithubOutlined />
-            </a>
-          )}
-          {project.youtubeLink && (
-            <a
-              href={project.youtubeLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-2xl hover:text-red-500 transition"
-            >
-              <YoutubeOutlined />
-            </a>
-          )}
-        </div>
-      </div>
+      <InfoCircleOutlined className="absolute bottom-3 right-3 !text-violet-600 cursor-pointer" />
     </div>
   );
 }
