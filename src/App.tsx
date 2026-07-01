@@ -4,7 +4,7 @@ import { EducationPage } from "./pages/education";
 import type { educationEntry, profile, skill, workExp } from "@/types";
 import { WorkExperiencePage } from "./pages/workExperience";
 import { ProjectsPage } from "./pages/projects";
-import { Profile } from "./pages/profile";
+import { Profile, ProfileSmallScreen } from "./pages/profile";
 import { Anchor, ConfigProvider } from "antd";
 import { SkillsTab } from "./pages/skills";
 const { Link } = Anchor;
@@ -33,19 +33,22 @@ function App() {
         <div className="bg-black w-full h-[37px] ">
           {containerRef && <NavigationBar refContainer={containerRef} />}
         </div>
-        <div className="grid grid-flow-col grid-cols-13 gap-2 h-19/20 w-full mr-2">
-          <div className="col-span-3 border-1 h-full overflow-hidden">
+        <div className="flex flex-col lg:grid grid-flow-col grid-cols-13 gap-2 h-19/20 w-full mr-2">
+          <div className="lg:col-span-3 border-1 lg:full lg:overflow-hidden hidden lg:block">
             <Profile profileData={bio} />
           </div>
           <div
-            className="col-span-8 h-full overflow-x-hidden ml-2"
+            className="lg:col-span-8 h-full overflow-x-hidden ml-2"
             ref={containerRef}
           >
+            <div className=" lg:hidden">
+              <ProfileSmallScreen profileData={bio} />
+            </div>
             <WorkExperiencePage workExperienceData={workEntry} id="work-exp" />
             <EducationPage educationData={eduEntry} id="education" />
             <ProjectsPage projectsData={projectsEntry} id="projects" />
           </div>
-          <div className="col-span-3 border-1 h-full overflow-hidden ml-3 bg-gray-100">
+          <div className=" lg:col-span-3 border-1 h-full overflow-hidden ml-3 bg-gray-100 hidden lg:block">
             <SkillsTab data={skills} />
           </div>
         </div>
