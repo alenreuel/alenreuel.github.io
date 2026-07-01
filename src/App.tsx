@@ -30,9 +30,17 @@ function App() {
   return (
     <>
       <div className="h-screen w-full ">
-        <div className="bg-black w-full h-[37px] ">
-          {containerRef && <NavigationBar refContainer={containerRef} />}
+        <div className="bg-black w-full h-[37px] md:hidden sm:hidden lg:block">
+          {containerRef && (
+            <NavigationBar refContainer={containerRef} includeAbout={false} />
+          )}
         </div>
+        <div className="bg-black w-full h-[37px] lg:block md:block sm:block lg:hidden">
+          {containerRef && (
+            <NavigationBar refContainer={containerRef} includeAbout={true} />
+          )}
+        </div>
+
         <div className="flex flex-col lg:grid grid-flow-col grid-cols-13 gap-2 h-19/20 w-full mr-2">
           <div className="lg:col-span-3 border-1 lg:full lg:overflow-hidden hidden lg:block">
             <Profile profileData={bio} />
@@ -41,7 +49,7 @@ function App() {
             className="lg:col-span-8 h-full overflow-x-hidden ml-2"
             ref={containerRef}
           >
-            <div className=" lg:hidden">
+            <div className=" lg:hidden sm:block hidden" id="about">
               <ProfileSmallScreen profileData={bio} />
             </div>
             <WorkExperiencePage workExperienceData={workEntry} id="work-exp" />
@@ -61,10 +69,13 @@ export default App;
 
 function NavigationBar({
   refContainer,
+  includeAbout,
 }: {
   refContainer: RefObject<HTMLDivElement | null>;
+  includeAbout?: boolean;
 }): React.ReactNode {
-  const className: string = "font-mono text-white text-xl";
+  const className: string = "font-mono text-white text-xl ";
+
   return (
     <ConfigProvider
       theme={{
@@ -93,6 +104,12 @@ function NavigationBar({
             direction="horizontal"
             getContainer={() => refContainer.current || window}
           >
+            {includeAbout ? (
+              <Link
+                href="#about"
+                title={<span className={className}>About</span>}
+              />
+            ) : null}
             <Link
               href="#work-exp"
               title={<span className={className}>Work Experience</span>}
