@@ -34,38 +34,36 @@ function App() {
     </div>
   );
   return (
-    <>
-      <div className="h-screen w-full ">
-        <div className="bg-black w-full h-[37px] md:hidden sm:hidden lg:block">
-          {containerRef && (
-            <NavigationBar refContainer={containerRef} includeAbout={false} />
-          )}
-        </div>
-        <div className="bg-black w-full h-[37px] lg:block md:block sm:block lg:hidden">
-          {containerRef && (
-            <NavigationBar refContainer={containerRef} includeAbout={true} />
-          )}
-        </div>
-
-        <div className="flex flex-col lg:grid grid-flow-col grid-cols-13 gap-2 h-19/20 w-full mr-2">
-          <div className="lg:col-span-3 border-1 lg:full lg:overflow-hidden hidden lg:block">
-            <Profile profileData={bio} />
-          </div>
-          <div
-            className="lg:col-span-8 h-full overflow-x-hidden ml-2"
-            ref={containerRef}
-          >
-            <div className=" lg:hidden sm:block hidden" id="about">
-              <ProfileSmallScreen profileData={bio} skills={skills} />
-            </div>
-            <WorkExperiencePage workExperienceData={workEntry} id="work-exp" />
-            <EducationPage educationData={eduEntry} id="education" />
-            <ProjectsPage projectsData={projectsEntry} id="projects" />
-          </div>
-          <Skills />
-        </div>
+    <div className="h-screen w-full overscroll-x-hidden ">
+      <div className="bg-black w-full h-[37px] lg:block hidden">
+        {containerRef && (
+          <NavigationBar refContainer={containerRef} includeAbout={false} />
+        )}
       </div>
-    </>
+      <div className="bg-black w-full h-[32px] block lg:hidden">
+        {containerRef && (
+          <NavigationBar refContainer={containerRef} includeAbout={true} />
+        )}
+      </div>
+
+      <div className="flex flex-col lg:grid grid-flow-col grid-cols-13 gap-2 h-19/20 w-full mr-2 md:m-10 sm:m-10 ">
+        <div className="col-span-3 border-1 full overflow-hidden hidden lg:block">
+          <Profile profileData={bio} />
+        </div>
+        <div
+          className="lg:col-span-8 h-full overflow-x-hidden ml-2"
+          ref={containerRef}
+        >
+          <div className=" lg:hidden sm:block md:block lg:hidden" id="about">
+            <ProfileSmallScreen profileData={bio} skills={skills} />
+          </div>
+          <WorkExperiencePage workExperienceData={workEntry} id="work-exp" />
+          <EducationPage educationData={eduEntry} id="education" />
+          <ProjectsPage projectsData={projectsEntry} id="projects" />
+        </div>
+        <Skills />
+      </div>
+    </div>
   );
 }
 
@@ -79,7 +77,7 @@ function NavigationBar({
   includeAbout?: boolean;
 }): React.ReactNode {
   const className: string =
-    "font-mono text-white lg:text-xl md:text-lg sm:text-md";
+    "font-mono text-white lg:text-xl md:text-lg sm:text-sm";
 
   return (
     <ConfigProvider
@@ -94,7 +92,7 @@ function NavigationBar({
       }}
     >
       <div className="flex flex-row justify-between p-0">
-        <div className="text-white font-mono text-3xl mx-10 p-0 ">
+        <div className="text-white font-mono lg:text-3xl md:text-2xl sm:text-md mx-5  p-0 ">
           {
             <span className="typewriter">
               <span className="text-violet-600">{"<"}</span>
@@ -103,7 +101,7 @@ function NavigationBar({
             </span>
           }
         </div>
-        <div className="mx-10 ">
+        <div className="mx-10 hidden lg:block md:block sm:block">
           <Anchor
             affix={false}
             direction="horizontal"

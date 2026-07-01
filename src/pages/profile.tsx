@@ -109,7 +109,7 @@ export function ProfileSmallScreen({
             <SheetTrigger asChild>
               <Button
                 variant="outline"
-                className="mt-10 w-3/7 absolute bottom-0 right-0"
+                className="mt-10 w-full md:w-3/7 md:absolute bottom-0 right-0"
               >
                 {
                   <span className="text-xl font-mono">
