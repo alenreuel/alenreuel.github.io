@@ -1,9 +1,23 @@
 import { LinkedinOutlined, GithubOutlined } from "@ant-design/icons";
-import type { profile } from "@/types";
+import { SkillsTab } from "./skills";
+
+import type { profile, skill } from "@/types";
 import { useState, useEffect } from "react";
 import { Splitter } from "antd";
+import {
+  Sheet,
+  SheetTrigger,
+  SheetClose,
+  SheetContent,
+  SheetHeader,
+  SheetFooter,
+  SheetTitle,
+  SheetDescription,
+} from "@/components/ui/sheet";
 
-export function Profile({ profileData }: { profileData: profile }) {
+import { Button } from "@/components/ui/button";
+
+export function Profile({ profileData }: { profileData: Promise<profile> }) {
   const [bio, setBio] = useState<profile | null>();
 
   useEffect(() => {
@@ -57,7 +71,13 @@ export function Profile({ profileData }: { profileData: profile }) {
   );
 }
 
-export function ProfileSmallScreen({ profileData }: { profileData: profile }) {
+export function ProfileSmallScreen({
+  profileData,
+  skills,
+}: {
+  profileData: Promise<profile>;
+  skills: Promise<skill[]>;
+}) {
   const [bio, setBio] = useState<profile | null>();
 
   useEffect(() => {
@@ -78,13 +98,45 @@ export function ProfileSmallScreen({ profileData }: { profileData: profile }) {
           />
         </div>
 
-        <div className="basis-6/8 sm:h-[150px] flex flex-col mx-2 ">
+        <div className="basis-6/8 sm:h-[150px] flex flex-col mx-2 relative">
           <div
             className="text-sm font-mono text-left"
             style={{ whiteSpace: "pre-line" }}
           >
             {bio?.Bio}
           </div>
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button
+                variant="outline"
+                className="mt-10 w-3/7 absolute bottom-0 right-0"
+              >
+                {
+                  <span className="text-xl font-mono">
+                    <span className="text-violet-600">{"<"}</span>
+                    {"Tech Stack"}
+                    <span className="text-violet-600">{"/>"}</span>
+                  </span>
+                }
+              </Button>
+            </SheetTrigger>
+            <SheetContent className="bg-gray-100 !w-2/5">
+              <SheetHeader>
+                <SheetTitle>
+                  {
+                    <span className="text-2xl font-mono">
+                      <span className="text-violet-600">{"<"}</span>
+                      {"Tech Stack"}
+                      <span className="text-violet-600">{"/>"}</span>
+                    </span>
+                  }
+                </SheetTitle>
+              </SheetHeader>
+              <div>
+                <SkillsTab data={skills} />
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </div>

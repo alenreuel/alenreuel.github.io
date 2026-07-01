@@ -27,6 +27,12 @@ function App() {
   const skills: Promise<skill[]> = fetch("/data/skills.json").then((response) =>
     response.json(),
   );
+
+  const Skills = () => (
+    <div className=" lg:col-span-3 border-1 h-full overflow-hidden ml-3 bg-gray-100 hidden lg:block">
+      <SkillsTab data={skills} />
+    </div>
+  );
   return (
     <>
       <div className="h-screen w-full ">
@@ -50,15 +56,13 @@ function App() {
             ref={containerRef}
           >
             <div className=" lg:hidden sm:block hidden" id="about">
-              <ProfileSmallScreen profileData={bio} />
+              <ProfileSmallScreen profileData={bio} skills={skills} />
             </div>
             <WorkExperiencePage workExperienceData={workEntry} id="work-exp" />
             <EducationPage educationData={eduEntry} id="education" />
             <ProjectsPage projectsData={projectsEntry} id="projects" />
           </div>
-          <div className=" lg:col-span-3 border-1 h-full overflow-hidden ml-3 bg-gray-100 hidden lg:block">
-            <SkillsTab data={skills} />
-          </div>
+          <Skills />
         </div>
       </div>
     </>
@@ -74,7 +78,8 @@ function NavigationBar({
   refContainer: RefObject<HTMLDivElement | null>;
   includeAbout?: boolean;
 }): React.ReactNode {
-  const className: string = "font-mono text-white text-xl ";
+  const className: string =
+    "font-mono text-white lg:text-xl md:text-lg sm:text-md";
 
   return (
     <ConfigProvider
