@@ -54,7 +54,7 @@ function App() {
           className="lg:col-span-8 h-full overflow-x-hidden ml-2"
           ref={containerRef}
         >
-          <div className=" lg:hidden sm:block md:block lg:hidden" id="about">
+          <div className=" lg:hidden sm:block md:block lg:hidden " id="about">
             <ProfileSmallScreen profileData={bio} skills={skills} />
           </div>
           <WorkExperiencePage workExperienceData={workEntry} id="work-exp" />

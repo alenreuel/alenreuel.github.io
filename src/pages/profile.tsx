@@ -85,7 +85,7 @@ export function ProfileSmallScreen({
   }, [profileData]);
 
   return (
-    <div className="flex flex-col m-10 w-full ">
+    <div className="flex flex-col mx-10 my-2 w-full ">
       <h1 className="font-mono text-4xl">{"About"}</h1>
       <div className="border-1 w-6/7 border-violet-600 " />
 

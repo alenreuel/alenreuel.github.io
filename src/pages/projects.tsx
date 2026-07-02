@@ -1,4 +1,4 @@
-import { Tag, Modal } from "antd";
+import { Tag, Modal, Card } from "antd";
 import {
   GithubOutlined,
   InfoCircleOutlined,
@@ -23,7 +23,9 @@ function ProjectModal({
   open: boolean;
   onClose: () => void;
 }): ReactNode {
-  const embedURL = project.youtubeLink ? getYouTubeEmbedURL(project.youtubeLink) : "";
+  const embedURL = project.youtubeLink
+    ? getYouTubeEmbedURL(project.youtubeLink)
+    : "";
 
   return (
     <Modal
@@ -182,12 +184,61 @@ export function ProjectsPage({
         <h1 className="font-mono text-4xl ">{`Projects`}</h1>
         <div className="border-1 w-6/7 border-violet-600" />
 
-        <div className=" flex flex-row flex-wrap w-6/7 items-start gap-3 my-5">
+        <div className=" md:flex lg:flex flex-row flex-wrap w-6/7 justify-evenly gap-3 my-5 hidden md:block lg:block">
           {projects.map((project, idx) => (
             <ProjectCard key={idx} project={project} />
           ))}
         </div>
+        <div className=" flex flex-col gap-3 w-full lg:hidden md:hidden">
+          {projects.map((project, idx) => (
+            <ProjectCardSmallScreen key={idx} project={project} />
+          ))}
+        </div>
       </div>
     </>
+  );
+}
+
+export function ProjectCardSmallScreen({
+  project,
+}: {
+  project: projects;
+}): ReactNode {
+  const [modalOpen, setModalOpen] = useState<boolean>(false);
+
+  return (
+    <div className="h-1/4 w-6/7 my-2 ">
+      <Card className="h-full w-full relative">
+        <div className="flex flex-row flex-nowrap items-center">
+          <div className="[150px]">
+            <img
+              src={project.imgURL}
+              height={80}
+              width={80}
+              className="object-contain"
+            ></img>
+          </div>
+          <div className="px-3 py-0  flex flex-col justify-between h-full w-full">
+            <div className="text-l font-mono font-bold flex justify-between w-full">
+              <div>{project.projectName}</div>
+            </div>
+            <Separator />
+            <div className="text-m font-mono py-2">
+              {`${project.projectDescription}`}
+            </div>
+          </div>
+        </div>
+        <InfoCircleOutlined
+          className="absolute bottom-3 right-3 !text-violet-600 cursor-pointer"
+          onClick={() => setModalOpen(true)}
+        />
+
+        <ProjectModal
+          project={project}
+          open={modalOpen}
+          onClose={() => setModalOpen(false)}
+        />
+      </Card>
+    </div>
   );
 }
