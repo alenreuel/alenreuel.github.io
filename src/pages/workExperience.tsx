@@ -8,20 +8,23 @@ function WorkExperienceCard({ workExp }: { workExp: workExp }): ReactNode {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
 
   return (
-    <div className="h-1/4 w-6/7 my-2 ">
+    <div className="h-1/4 w-6/7 my-2 !p-0">
       <Card className="h-full w-full relative">
+        <div className="block absolute -top-2 -left-2 sm:hidden md:hidden lg:hidden rounded [50px]">
+          <img src={workExp.imageURL} height={30} width={30}></img>
+        </div>
         <div className="flex flex-row flex-nowrap items-center">
-          <div className="[150px]">
+          <div className="hidden sm:block md:block lg:block">
             <img src={workExp.imageURL} height={80} width={80}></img>
           </div>
           <div className="px-3 py-0  flex flex-col justify-between h-full w-full">
-            <div className="text-l font-mono font-bold flex justify-between w-full">
+            <div className="text-s sm:text-l md:text-l lg:text-l font-mono font-bold flex justify-between w-full">
               <div>{workExp.organizationName}</div>
-              <div className="text-m font-mono font-light italic">{`${workExp.start} — ${workExp.end}`}</div>
+              <div className="text-xs sm:text-m md:text-m lg:text-m font-mono font-light italic flex-none">{`${workExp.start} — ${workExp.end}`}</div>
             </div>
-            <div className="text-m font-mono font-light">{`${workExp.role}`}</div>
+            <div className="text-xs sm:text-m md:text-m lg:text-m font-mono font-light">{`${workExp.role}`}</div>
             <Separator />
-            <div className="text-m font-mono py-2">
+            <div className="text-xs sm:text-m md:text-m lg:text-m font-mono py-2">
               {`${workExp.responsibilites}`}
             </div>
           </div>
@@ -43,10 +46,10 @@ function WorkExperienceCard({ workExp }: { workExp: workExp }): ReactNode {
             <div className="[150px]">
               <img src={workExp.imageURL} height={80} width={80}></img>
             </div>
-            <div className="px-3 py-0  flex flex-col justify-between h-full w-full">
+            <div className="px-0 sm:px-3 md:px-3 lg:px-3 py-0  flex flex-col justify-between  h-full w-full">
               <div className="text-l font-mono font-bold flex justify-between w-full">
                 <div>{workExp.organizationName}</div>
-                <div className="text-m font-mono font-light italic">{`${workExp.start} — ${workExp.end}`}</div>
+                <div className="text-m font-mono font-light italic flex-none">{`${workExp.start} — ${workExp.end}`}</div>
               </div>
               <div className="text-m font-mono font-light">{`${workExp.role}`}</div>
               <Separator />
