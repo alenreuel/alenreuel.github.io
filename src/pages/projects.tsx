@@ -209,8 +209,16 @@ export function ProjectCardSmallScreen({
   return (
     <div className="h-1/4 w-6/7 my-2 ">
       <Card className="h-full w-full relative">
+        <div className="block absolute -top-2 -left-2 sm:hidden md:hidden lg:hidden rounded [50px]">
+          <img
+            src={project.imgURL}
+            height={30}
+            width={30}
+            className="object-contain"
+          ></img>
+        </div>
         <div className="flex flex-row flex-nowrap items-center">
-          <div className="[150px]">
+          <div className="[150px] hidden sm:block md:block lg:block">
             <img
               src={project.imgURL}
               height={80}

@@ -10,9 +10,12 @@ function EducationQualificationCard({
 }): ReactNode {
   return (
     <div className="h-1/4 w-6/7 my-2 ">
-      <Card className="h-full w-full">
+      <Card className="h-full w-full relative">
+        <div className="block absolute -top-2 -left-2 sm:hidden md:hidden lg:hidden rounded [50px]">
+          <img src={educationEntry.imageURL} height={30} width={30}></img>
+        </div>
         <div className="flex flex-row items-center ">
-          <div>
+          <div className="hidden sm:block md:block lg:block">
             <img src={educationEntry.imageURL} height={80} width={80}></img>
           </div>
           <div className="px-3 py-0  flex flex-col justify-between h-full w-full">
@@ -33,7 +36,7 @@ function EducationQualificationCard({
                 <h1 className="text-m font-mono font-light">
                   <span>{`Awards: `}</span>
                   {educationEntry.awards.map((award, idx) =>
-                    idx < educationEntry.length - 1 ? (
+                    idx < educationEntry.awards.length - 1 ? (
                       <span className="text-m font-mono font-light">{`${award}, `}</span>
                     ) : (
                       <span className="text-m font-mono font-light">{`${award}`}</span>
