@@ -184,7 +184,7 @@ export function ProjectsPage({
         <h1 className="font-mono text-4xl ">{`Projects`}</h1>
         <div className="border-1 w-6/7 border-violet-600" />
 
-        <div className=" md:flex lg:flex flex-row flex-wrap w-6/7 justify-evenly gap-3 my-5 hidden md:block lg:block">
+        <div className=" md:flex lg:flex flex-row flex-wrap w-6/7 justify-evenly gap-3 my-5 hidden md:block lg:blockw">
           {projects.map((project, idx) => (
             <ProjectCard key={idx} project={project} />
           ))}
@@ -209,7 +209,7 @@ export function ProjectCardSmallScreen({
   return (
     <div className="h-1/4 w-6/7 my-2 ">
       <Card className="h-full w-full relative">
-        <div className="block absolute -top-2 -left-2 sm:hidden md:hidden lg:hidden rounded [50px]">
+        <div className=" hidden sm:block md:block lg:block rounded [50px]">
           <img
             src={project.imgURL}
             height={30}

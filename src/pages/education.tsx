@@ -11,7 +11,7 @@ function EducationQualificationCard({
   return (
     <div className="h-1/4 w-6/7 my-2 ">
       <Card className="h-full w-full relative">
-        <div className="block absolute -top-2 -left-2 sm:hidden md:hidden lg:hidden rounded [50px]">
+        <div className="block absolute top-2 -left-3 sm:hidden md:hidden lg:hidden rounded [50px]">
           <img src={educationEntry.imageURL} height={30} width={30}></img>
         </div>
         <div className="flex flex-row items-center ">
