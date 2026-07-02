@@ -2,7 +2,7 @@
   {
     "projectName": "Skillspulse - AI Powered Learning Assistant",
     "projectDescription": "An AI-powered browser extension that creates enables personalized learning. Allows users to create personalized goals, summarize web content and youtube videos, generate quizzes and track user metrics.",
-    "imgURL": "/src/assets/skillspulse.jpeg",
+    "imgURL": "/images/skillspulse.jpeg",
     "githubLink": "https://github.com/IT5007-2520/course-project-skillpulse/tree/main",
     "youtubeLink": "https://www.youtube.com/watch?v=zgIi6AIUF1c",
     "skills": ["Langchain", "FastAPI", "React", "Docker"]
@@ -40,7 +40,7 @@
   {
     "projectName": "Brain Tumor Classification",
     "projectDescription": "Deep learning model for brain tumor detection and classification using PyTorch.",
-    "imgURL": "/src/assets/brainTumorProject.png",
+    "imgURL": "/images/brainTumorProject.png",
     "githubLink": "https://github.com/alenreuel/data_science_projects/blob/main/brain_tumor_classification_MRI/Brain_Tumor_Notebook.ipynb",
     "youtubeLink": "",
     "skills": ["PyTorch", "Computer Vision"]
