@@ -1,7 +1,13 @@
 import { useRef, type RefObject } from "react";
 import "./App.css";
 import { EducationPage } from "./pages/education";
-import type { educationEntry, profile, skill, workExp } from "@/types";
+import type {
+  educationEntry,
+  profile,
+  skill,
+  workExp,
+  projects,
+} from "@/types";
 import { WorkExperiencePage } from "./pages/workExperience";
 import { ProjectsPage } from "./pages/projects";
 import { Profile, ProfileSmallScreen } from "./pages/profile";
@@ -18,7 +24,7 @@ function App() {
   const workEntry: Promise<workExp[]> = fetch("/data/work.json").then(
     (response) => response.json(),
   );
-  const projectsEntry: Promise<workExp[]> = fetch("/data/projects.json").then(
+  const projectsEntry: Promise<projects[]> = fetch("/data/projects.json").then(
     (response) => response.json(),
   );
   const bio: Promise<profile> = fetch("/data/bio.json").then((response) =>
@@ -84,7 +90,6 @@ function NavigationBar({
       theme={{
         components: {
           Anchor: {
-            colorTextActive: "#7C3AED",
             colorPrimary: "#7C3AED",
             colorLinkHover: "#7C3AED",
           },
