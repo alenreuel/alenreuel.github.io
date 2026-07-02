@@ -1,0 +1,20 @@
+[
+  {
+    "university_name": "National University of Singapore",
+    "qualification": "Masters in Computing",
+    "start": 2025,
+    "end": "present",
+    "gpa": "4.81/5.00",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b9/NUS_coat_of_arms.svg/1280px-NUS_coat_of_arms.svg.png",
+    "awards": []
+  },
+  {
+    "university_name": "Nanyang Technological University",
+    "qualification": "Bachelors in Engineering, Highest Distinction",
+    "start": 2018,
+    "end": 2022,
+    "gpa": "4.62/5.00",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f8/Nanyang_Technological_University_coat_of_arms_vector.svg/1280px-Nanyang_Technological_University_coat_of_arms_vector.svg.png",
+    "awards": ["Dean's List(2019-20, 2020-21, 2021-22)"]
+  }
+]
