@@ -40,7 +40,7 @@ function App() {
           <NavigationBar refContainer={containerRef} includeAbout={false} />
         )}
       </div>
-      <div className="bg-black w-full h-[32px] block lg:hidden">
+      <div className="bg-black w-full h-64px sm:h-[32px] md:h-[32px] block lg:hidden">
         {containerRef && (
           <NavigationBar refContainer={containerRef} includeAbout={true} />
         )}
@@ -77,7 +77,7 @@ function NavigationBar({
   includeAbout?: boolean;
 }): React.ReactNode {
   const className: string =
-    "font-mono text-white lg:text-xl md:text-lg sm:text-sm";
+    "font-mono text-white lg:text-xl md:text-lg text-lg ";
 
   return (
     <ConfigProvider
@@ -91,7 +91,7 @@ function NavigationBar({
         },
       }}
     >
-      <div className="flex flex-row md:justify-between lg:justify-between justify-evenly p-0 m-0">
+      <div className="flex flex-col md:flex-row lg:flex-row md:justify-between lg:justify-between justify-evenly content-center p-0 m-0">
         <div className="text-white font-mono lg:text-3xl md:text-2xl text-3xl mx-5  p-0 ">
           {
             <span className="typewriter">
@@ -101,7 +101,7 @@ function NavigationBar({
             </span>
           }
         </div>
-        <div className="mx-10 hidden lg:block md:block sm:block">
+        <div className="md:mx-10 lg:mx-10 mx-0 p-0">
           <Anchor
             affix={false}
             direction="horizontal"
