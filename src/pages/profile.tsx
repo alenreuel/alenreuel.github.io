@@ -25,7 +25,7 @@ export function Profile({ profileData }: { profileData: Promise<profile> }) {
   }, [profileData]);
 
   return (
-    <div className="flex h-full lg:flex-col gap-8 items-center m-2 relative">
+    <div className="flex h-full flex-col gap-8 items-center relative">
       <div className="lg:basis-1/8 hidden lg:block" />
       <div className="basis-2/8">
         <img

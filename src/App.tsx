@@ -46,7 +46,7 @@ function App() {
         )}
       </div>
 
-      <div className="flex flex-col lg:grid grid-flow-col grid-cols-13 gap-2 h-19/20 w-full mr-2 md:m-10 sm:m-10 ">
+      <div className="sm:flex md:flex md:flex-col sm:flex-col lg:grid grid-flow-col grid-cols-13 gap-2 h-19/20 w-full mr-2 md:m-10 sm:m-10 lg:m-0">
         <div className="col-span-3 border-1 full overflow-hidden hidden lg:block">
           <Profile profileData={bio} />
         </div>
@@ -91,8 +91,8 @@ function NavigationBar({
         },
       }}
     >
-      <div className="flex flex-row justify-between p-0">
-        <div className="text-white font-mono lg:text-3xl md:text-2xl sm:text-md mx-5  p-0 ">
+      <div className="flex flex-row md:justify-between lg:justify-between justify-evenly p-0 m-0">
+        <div className="text-white font-mono lg:text-3xl md:text-2xl text-3xl mx-5  p-0 ">
           {
             <span className="typewriter">
               <span className="text-violet-600">{"<"}</span>
