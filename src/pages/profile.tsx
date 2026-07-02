@@ -3,16 +3,12 @@ import { SkillsTab } from "./skills";
 
 import type { profile, skill } from "@/types";
 import { useState, useEffect } from "react";
-import { Splitter } from "antd";
 import {
   Sheet,
   SheetTrigger,
-  SheetClose,
   SheetContent,
   SheetHeader,
-  SheetFooter,
   SheetTitle,
-  SheetDescription,
 } from "@/components/ui/sheet";
 
 import { Button } from "@/components/ui/button";
