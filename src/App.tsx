@@ -13,6 +13,7 @@ import { ProjectsPage } from "./pages/projects";
 import { Profile, ProfileSmallScreen } from "./pages/profile";
 import { Anchor, ConfigProvider } from "antd";
 import { SkillsTab } from "./pages/skills";
+import { SocialsPanel } from "./components/socialsPanel";
 const { Link } = Anchor;
 
 function App() {
@@ -35,7 +36,7 @@ function App() {
   );
 
   const Skills = () => (
-    <div className=" lg:col-span-3 border-1 h-full overflow-hidden ml-3 bg-gray-100 hidden lg:block">
+    <div className=" lg:col-span-3 border-1 h-full overflow-hidden ml-0 bg-gray-100 hidden lg:block ">
       <SkillsTab data={skills} />
     </div>
   );
@@ -57,12 +58,13 @@ function App() {
           <Profile profileData={bio} />
         </div>
         <div
-          className="lg:col-span-8 h-full overflow-x-hidden ml-2"
+          className="lg:col-span-8 h-full overflow-x-hidden ml-2 relative"
           ref={containerRef}
         >
           <div className=" lg:hidden sm:block md:block lg:hidden " id="about">
             <ProfileSmallScreen profileData={bio} skills={skills} />
           </div>
+          <SocialsPanel profileData={bio} />
           <WorkExperiencePage workExperienceData={workEntry} id="work-exp" />
           <EducationPage educationData={eduEntry} id="education" />
           <ProjectsPage projectsData={projectsEntry} id="projects" />
