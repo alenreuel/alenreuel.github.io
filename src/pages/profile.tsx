@@ -32,13 +32,16 @@ export function Profile({ profileData }: { profileData: Promise<profile> }) {
       </div>
 
       <div className="flex flex-col gap-4 basis-6/8 relative">
-        <div>
-          <h1 className="font-mono text-4xl">{"About"}</h1>
-          <div className="border-1 w-6/7 border-violet-600" />
+        <div className="flex flex-col gap-2 items-center">
+          <h1 className="font-mono text-4xl text-left w-6/7">{"About"}</h1>
+          <div className="border-1 w-6/7 border-violet-600 " />
 
-          <span className="text-m font-mono" style={{ whiteSpace: "pre-line" }}>
+          <div
+            className="text-m font-mono w-6/7 text-left"
+            style={{ whiteSpace: "pre-line" }}
+          >
             {bio?.Bio}
-          </span>
+          </div>
           <div className="flex flex-row gap-6 absolute bottom-0 right-0 p-2">
             {bio && (
               <a
