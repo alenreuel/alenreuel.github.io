@@ -13,7 +13,6 @@ import { ProjectsPage } from "./pages/projects";
 import { Profile, ProfileSmallScreen } from "./pages/profile";
 import { Anchor, ConfigProvider } from "antd";
 import { SkillsTab } from "./pages/skills";
-import { SocialsPanel } from "./components/socialsPanel";
 const { Link } = Anchor;
 
 function App() {

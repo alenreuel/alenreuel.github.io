@@ -5,7 +5,7 @@ import {
   CopyOutlined,
   CheckOutlined,
 } from "@ant-design/icons";
-import { Popover } from "antd";
+import { Avatar, Popover } from "antd";
 import { useEffect, useState } from "react";
 import type { profile } from "@/types";
 
@@ -29,8 +29,8 @@ export function SocialsPanel({
 
   if (!bio) return null;
 
-  const iconClassName =
-    "!text-black text-2xl hover:!text-violet-600 transition-colors cursor-pointer";
+  const avatarClassName =
+    "!bg-black hover:!bg-violet-600 transition-colors cursor-pointer ring-2 ring-white";
 
   const emailContent = (
     <div className="flex items-center gap-3 font-mono">
@@ -48,8 +48,8 @@ export function SocialsPanel({
   );
 
   return (
-    <div className="flex justify-end items-start w-full">
-      <div className="flex flex-row gap-5 items-center rounded-xl py-4 px-3 mt-1 mr-2 shadow-lg shadow-violet-600/20">
+    <div className="absolute top-1/2 -translate-y-1/2 -right-3 z-10">
+      <div className="flex flex-col gap-2 items-center">
         <Popover
           content={
             <a
@@ -63,10 +63,15 @@ export function SocialsPanel({
               </span>
             </a>
           }
-          placement="left"
+          placement="right"
           trigger={["hover", "click"]}
         >
-          <GithubOutlined className={iconClassName} />
+          <Avatar
+            size={36}
+            icon={<GithubOutlined />}
+            className={avatarClassName}
+            aria-label="GitHub"
+          />
         </Popover>
         <Popover
           content={
@@ -81,18 +86,28 @@ export function SocialsPanel({
               </span>
             </a>
           }
-          placement="left"
+          placement="right"
           trigger={["hover", "click"]}
         >
-          <LinkedinOutlined className={iconClassName} />
+          <Avatar
+            size={36}
+            icon={<LinkedinOutlined />}
+            className={avatarClassName}
+            aria-label="LinkedIn"
+          />
         </Popover>
 
         <Popover
           content={emailContent}
-          placement="left"
+          placement="right"
           trigger={["hover", "click"]}
         >
-          <MailOutlined className={iconClassName} aria-label="Email" />
+          <Avatar
+            size={36}
+            icon={<MailOutlined />}
+            className={avatarClassName}
+            aria-label="Email"
+          />
         </Popover>
       </div>
     </div>

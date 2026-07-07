@@ -25,11 +25,14 @@ export function Profile({ profileData }: { profileData: Promise<profile> }) {
     <div className="flex h-full flex-col gap-8 items-center relative">
       <div className="lg:basis-1/8 hidden lg:block" />
       <div className="basis-2/8">
-        <img
-          src={bio?.bioPhotoURL}
-          alt={bio?.name}
-          className="h-[200px] w-[200px] lg:h-[250px] lg:w-[250px] rounded-full "
-        />
+        <div className="relative w-fit">
+          <img
+            src={bio?.bioPhotoURL}
+            alt={bio?.name}
+            className="h-[200px] w-[200px] lg:h-[250px] lg:w-[250px] rounded-full "
+          />
+          <SocialsPanel profileData={profileData} />
+        </div>
       </div>
 
       <div className="flex flex-col gap-4 basis-6/8 relative">
@@ -43,7 +46,6 @@ export function Profile({ profileData }: { profileData: Promise<profile> }) {
           >
             {bio?.Bio}
           </div>
-          <SocialsPanel profileData={profileData} />
         </div>
       </div>
     </div>
@@ -70,12 +72,14 @@ export function ProfileSmallScreen({
 
       <div className="flex gap-1 flex-col sm:flex-row justify-center items-center w-6/7 gap-2">
         <div className="basis-2/8 ">
-          <img
-            src={bio?.bioPhotoURL}
-            alt={bio?.name}
-            className="h-[300px] w-[300px] sm:h-[150px] sm:w-[150px] rounded-full my-2"
-          />
-          <SocialsPanel profileData={profileData} />
+          <div className="relative w-fit">
+            <img
+              src={bio?.bioPhotoURL}
+              alt={bio?.name}
+              className="h-[300px] w-[300px] sm:h-[150px] sm:w-[150px] rounded-full my-2"
+            />
+            <SocialsPanel profileData={profileData} />
+          </div>
         </div>
 
         <div className="basis-6/8 sm:h-[150px] flex flex-col mx-2 relative">
