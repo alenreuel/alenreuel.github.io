@@ -30,7 +30,7 @@ export function SocialsPanel({
   if (!bio) return null;
 
   const iconClassName =
-    "!text-white text-2xl hover:!text-violet-600 transition-colors cursor-pointer";
+    "!text-black text-2xl hover:!text-violet-600 transition-colors cursor-pointer";
 
   const emailContent = (
     <div className="flex items-center gap-3 font-mono">
@@ -48,8 +48,8 @@ export function SocialsPanel({
   );
 
   return (
-    <div className="sticky top-0 z-50 h-0 flex justify-end items-start">
-      <div className="flex flex-col gap-5 items-center bg-black rounded-xl py-4 px-3 mt-1 mr-2 shadow-lg shadow-violet-600/20">
+    <div className="flex justify-end items-start w-full">
+      <div className="flex flex-row gap-5 items-center rounded-xl py-4 px-3 mt-1 mr-2 shadow-lg shadow-violet-600/20">
         <Popover
           content={
             <a

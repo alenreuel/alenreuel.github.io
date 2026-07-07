@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/sheet";
 
 import { Button } from "@/components/ui/button";
+import { SocialsPanel } from "@/components/socialsPanel";
 
 export function Profile({ profileData }: { profileData: Promise<profile> }) {
   const [bio, setBio] = useState<profile | null>();
@@ -37,33 +38,12 @@ export function Profile({ profileData }: { profileData: Promise<profile> }) {
           <div className="border-1 w-6/7 border-violet-600 " />
 
           <div
-            className="text-m font-mono w-6/7 text-left"
+            className="text-sm font-mono w-6/7 text-left md:text-sm lg:text-m"
             style={{ whiteSpace: "pre-line" }}
           >
             {bio?.Bio}
           </div>
-          <div className="flex flex-row gap-6 absolute bottom-0 right-0 p-2">
-            {bio && (
-              <a
-                href={bio.LinkedIN}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-3xl hover:text-blue-600 transition"
-              >
-                <LinkedinOutlined />
-              </a>
-            )}
-            {bio && (
-              <a
-                href={bio.Github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-3xl hover:text-gray-800 transition"
-              >
-                <GithubOutlined />
-              </a>
-            )}
-          </div>
+          <SocialsPanel profileData={profileData} />
         </div>
       </div>
     </div>
@@ -95,6 +75,7 @@ export function ProfileSmallScreen({
             alt={bio?.name}
             className="h-[300px] w-[300px] sm:h-[150px] sm:w-[150px] rounded-full my-2"
           />
+          <SocialsPanel profileData={profileData} />
         </div>
 
         <div className="basis-6/8 sm:h-[150px] flex flex-col mx-2 relative">

@@ -64,7 +64,6 @@ function App() {
           <div className=" lg:hidden sm:block md:block lg:hidden " id="about">
             <ProfileSmallScreen profileData={bio} skills={skills} />
           </div>
-          <SocialsPanel profileData={bio} />
           <WorkExperiencePage workExperienceData={workEntry} id="work-exp" />
           <EducationPage educationData={eduEntry} id="education" />
           <ProjectsPage projectsData={projectsEntry} id="projects" />
