@@ -34,6 +34,7 @@ export type profile = {
   bioPhotoURL: string;
   LinkedIN: string;
   Github: string;
+  Email: string;
   Bio: string;
 };
 
