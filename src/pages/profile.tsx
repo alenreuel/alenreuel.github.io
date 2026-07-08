@@ -1,4 +1,3 @@
-import { LinkedinOutlined, GithubOutlined } from "@ant-design/icons";
 import { SkillsTab } from "./skills";
 
 import type { profile, skill } from "@/types";
