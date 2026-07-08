@@ -46,7 +46,12 @@ function App() {
           <NavigationBar refContainer={containerRef} includeAbout={false} />
         )}
       </div>
-      <div className="bg-black w-full h-64px sm:h-[37px] md:h-[37px] block lg:hidden">
+      <div className="bg-black w-full h-[37px] md:block lg:hidden hidden">
+        {containerRef && (
+          <NavigationBar refContainer={containerRef} includeAbout={true} />
+        )}
+      </div>
+      <div className="pl-5 bg-black w-full w-[64px] md:hidden lg:hidden block">
         {containerRef && (
           <NavigationBar refContainer={containerRef} includeAbout={true} />
         )}
@@ -82,8 +87,7 @@ function NavigationBar({
   refContainer: RefObject<HTMLDivElement | null>;
   includeAbout?: boolean;
 }): React.ReactNode {
-  const className: string =
-    "font-mono text-white lg:text-xl md:text-lg text-lg ";
+  const className: string = "font-mono text-white text-xl ";
 
   return (
     <ConfigProvider
@@ -97,7 +101,7 @@ function NavigationBar({
       }}
     >
       <div className="flex flex-col md:flex-row lg:flex-row md:justify-between lg:justify-between justify-start content-center p-0 m-0">
-        <div className="text-white font-mono lg:text-3xl md:text-2xl text-3xl mx-5  p-0 ">
+        <div className="text-white font-mono text-3xl ml-0  pl-2 ">
           {
             <span className="typewriter">
               <span className="text-violet-600">{"<"}</span>
