@@ -180,7 +180,7 @@ export function ProjectsPage({
 
   return (
     <>
-      <div className="flex flex-col m-10 w-full" id={id}>
+      <div className="flex flex-col m-10 ml-5 w-full" id={id}>
         <h1 className="font-mono text-4xl ">{`Projects`}</h1>
         <div className="border-1 w-6/7 border-violet-600" />
 
