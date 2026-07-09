@@ -84,18 +84,20 @@ function ProjectModal({
       {embedURL && (
         <>
           <Separator />
-          <div className="my-4">
-            <h3 className="font-mono font-bold text-base mb-2">Demo</h3>
-            <iframe
-              width="100%"
-              height="315"
-              src={embedURL}
-              title={`${project.projectName} demo`}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="rounded-md"
-            />
-          </div>
+          <Suspense>
+            <div className="my-4">
+              <h3 className="font-mono font-bold text-base mb-2">Demo</h3>
+              <iframe
+                width="100%"
+                height="315"
+                src={embedURL}
+                title={`${project.projectName} demo`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="rounded-md"
+              />
+            </div>
+          </Suspense>
         </>
       )}
 
