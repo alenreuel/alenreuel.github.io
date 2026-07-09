@@ -5,7 +5,7 @@ import {
   LockOutlined,
   LinkOutlined,
 } from "@ant-design/icons";
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode, Suspense } from "react";
 import type { projects } from "@/types";
 import { Separator } from "@/components/ui/separator";
 
@@ -112,11 +112,11 @@ function ProjectModal({
             >
               <div className="border border-violet-300 rounded-md p-4 flex items-center gap-3 hover:border-violet-600 hover:bg-violet-50 transition-all cursor-pointer">
                 <LinkOutlined className="!text-violet-600 text-lg shrink-0" />
-                <div className="flex flex-col font-mono">
+                <div className="flex flex-col font-mono overflow-hidden">
                   <span className="text-sm text-violet-600 font-semibold">
                     Visit Project
                   </span>
-                  <span className="text-xs text-gray-400 truncate max-w-[500px]">
+                  <span className="text-xs text-gray-400 truncate max-w-[500px] ">
                     {project.liveLink}
                   </span>
                 </div>
@@ -134,8 +134,8 @@ function ProjectCard({ project }: { project: projects }): ReactNode {
 
   return (
     <div className="w-[250px] h-[400px] flex flex-col justify-between border-1 gap-2 rounded-md relative">
-      <div className="flex flex-col items-center basis-3/7 h-3/7 p-2">
-        <h1 className="text-m font-mono font-bold text-center mb-2 h-1/4">
+      <div className="flex flex-col items-center basis-3/7 h-4/7 p-2">
+        <h1 className="text-md font-mono font-bold text-center mb-2 h-1/4">
           {project.projectName}
         </h1>
         <img
@@ -146,7 +146,7 @@ function ProjectCard({ project }: { project: projects }): ReactNode {
         ></img>
       </div>
 
-      <div className="text-xs font-mono text-left overflow-scroll m-2 basis-4/7">
+      <div className="text-xs font-mono text-left overflow-scroll m-2 basis-4/7 h-3/7">
         <Separator />
         <div className="p-2">{project.projectDescription}</div>
       </div>
