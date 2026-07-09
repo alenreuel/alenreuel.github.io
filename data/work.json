@@ -10,7 +10,7 @@
       "Leveraged Prefect to design orchestration workflows that parallelized ML model training across remote compute on Azure ML, reducing server processing time and load by 40% and 70% respectively.",
       "Identified data processing bottlenecks on the frontend and refactored API calls for direct uploads to Azure Blob Storage via signed URLs, reducing memory-related failure events on the client-side by 40–50%."
     ],
-    "imageURL": "https://media.licdn.com/dms/image/v2/C560BAQFsAxevcWEIeA/company-logo_200_200/company-logo_200_200/0/1640454711802?e=1783555200&v=beta&t=DGarFMM0PgMc5R7zhPSnn5BS-keCzQrWT--7c81Esgw"
+    "imageURL": "/images/aleph_logo.jpeg"
   },
   {
     "organizationName": "National University of Singapore",
@@ -36,6 +36,6 @@
       "Conducted rigorous statistical analysis of the product line, pinpointed underlying factors contributing to KPI drifts, and delivered weekly analytical reports to cross-functional stakeholders.",
       "Extracted, transformed, and analyzed manufacturing datasets to optimize process and equipment performance, identifying equipment requiring preventive maintenance and ensuring >80% availability of production equipment."
     ],
-    "imageURL": "https://media.licdn.com/dms/image/v2/D560BAQGfQ4M3evQz-g/company-logo_200_200/company-logo_200_200/0/1728389136980?e=1783555200&v=beta&t=kiF886V3b6BFVgyC4R6W9D4Bmw_Jui2H1xH8hvEhdjk"
+    "imageURL": "public/images/micron-logo.png"
   }
 ]
