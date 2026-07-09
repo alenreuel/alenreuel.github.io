@@ -17,7 +17,7 @@
     "start": 2023,
     "end": 2025,
     "role": "Research Engineer - Applied ML",
-    "responsibilites": "Researched about the application of machine learning to improve equipment calibration time.",
+    "responsibilites": "Researched the application of machine learning to improve equipment re-calibration time in the Pharmaceutical Industry.",
     "jobResponsibilites": [
       "Collaborated with Pfizer and led a research project on the application of machine learning for equipment calibration, reducing operational downtime in pharmaceutical plants.",
       "Modeled industrial processes using RNN-based models (PyTorch) with reliable predictions at <5% MAPE, improving equipment recalibration time by 75% through faster feedback loops compared to traditional methods.",
