@@ -9,25 +9,15 @@ import { Avatar, Popover } from "antd";
 import { useEffect, useState } from "react";
 import type { profile } from "@/types";
 
-export function SocialsPanel({
-  profileData,
-}: {
-  profileData: Promise<profile>;
-}) {
-  const [bio, setBio] = useState<profile | null>(null);
+export function SocialsPanel({ profileData }: { profileData: profile }) {
+  const bio = profileData;
   const [copied, setCopied] = useState(false);
-
-  useEffect(() => {
-    profileData.then((data) => setBio(data));
-  }, [profileData]);
 
   useEffect(() => {
     if (!copied) return;
     const timer = setTimeout(() => setCopied(false), 2000);
     return () => clearTimeout(timer);
   }, [copied]);
-
-  if (!bio) return null;
 
   const avatarClassName =
     "!bg-black hover:!bg-violet-600 transition-colors cursor-pointer ring-2 ring-white";

@@ -1,27 +1,12 @@
 import type { skill } from "@/types";
 import type { ReactNode } from "react";
-import { useEffect, useState } from "react";
 
-export function SkillsTab({ data }: { data: Promise<skill[]> }): ReactNode {
-  const [skillsData, setSkillsData] = useState<skill[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    data.then((resolvedData) => {
-      setSkillsData(resolvedData);
-      setLoading(false);
-    });
-  }, [data]);
-
-  if (loading) return <div className="p-6">Loading skills...</div>;
-
-  const skills: string[] = [
-    ...new Set(skillsData.map((val) => val.parent_skill)),
-  ];
+export function SkillsTab({ data }: { data: skill[] }): ReactNode {
+  const skills: string[] = [...new Set(data.map((val) => val.parent_skill))];
   const skillsMap: Record<string, skill[]> = Object.fromEntries(
     skills.map((cat) => [
       cat,
-      skillsData
+      data
         .filter((val) => cat == val.parent_skill)
         .sort((a, b) => a.skill.localeCompare(b.skill)),
     ]),

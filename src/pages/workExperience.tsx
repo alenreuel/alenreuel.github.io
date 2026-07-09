@@ -1,7 +1,7 @@
 import { Card, Modal } from "antd";
 import { InfoCircleOutlined, RightOutlined } from "@ant-design/icons";
 import { Separator } from "@/components/ui/separator";
-import { useEffect, useState, type ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import type { workExp } from "@/types";
 
 function WorkExperienceCard({ workExp }: { workExp: workExp }): ReactNode {
@@ -77,22 +77,16 @@ export function WorkExperiencePage({
   workExperienceData,
   id,
 }: {
-  workExperienceData: Promise<workExp[]>;
+  workExperienceData: workExp[];
   id: string;
 }): ReactNode {
-  const [workData, setWorkData] = useState<workExp[]>([]);
-
-  useEffect(() => {
-    workExperienceData.then((data) => setWorkData(data));
-  }, [workExperienceData]);
-
   return (
     <>
       <div className="flex flex-col m-10 ml-5 w-full" id={id}>
         <h1 className="font-mono text-4xl">{`Work Experience`}</h1>
         <div className="border-1 w-6/7 border-violet-600" />
 
-        {workData.map((value) => (
+        {workExperienceData.map((value) => (
           <WorkExperienceCard workExp={value} />
         ))}
       </div>

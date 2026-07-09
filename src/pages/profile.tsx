@@ -1,7 +1,6 @@
 import { SkillsTab } from "./skills";
 
 import type { profile, skill } from "@/types";
-import { useState, useEffect } from "react";
 import {
   Sheet,
   SheetTrigger,
@@ -13,12 +12,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { SocialsPanel } from "@/components/socialsPanel";
 
-export function Profile({ profileData }: { profileData: Promise<profile> }) {
-  const [bio, setBio] = useState<profile | null>();
-
-  useEffect(() => {
-    profileData.then((data) => setBio(data));
-  }, [profileData]);
+export function Profile({ profileData }: { profileData: profile }) {
+  const bio = profileData;
 
   return (
     <div className="flex h-full flex-col gap-8 items-center relative">
@@ -55,14 +50,10 @@ export function ProfileSmallScreen({
   profileData,
   skills,
 }: {
-  profileData: Promise<profile>;
-  skills: Promise<skill[]>;
+  profileData: profile;
+  skills: skill[];
 }) {
-  const [bio, setBio] = useState<profile | null>();
-
-  useEffect(() => {
-    profileData.then((data) => setBio(data));
-  }, [profileData]);
+  const bio = profileData;
 
   return (
     <div className="flex flex-col mx-10 ml-5 my-2 w-full ">

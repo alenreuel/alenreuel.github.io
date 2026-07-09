@@ -1,5 +1,5 @@
 import { Card } from "antd";
-import { useEffect, useState, type ReactNode } from "react";
+import type { ReactNode } from "react";
 import type { educationEntry } from "@/types";
 import { Separator } from "@/components/ui/separator";
 
@@ -56,21 +56,15 @@ export function EducationPage({
   educationData,
   id,
 }: {
-  educationData: Promise<educationEntry[]>;
+  educationData: educationEntry[];
   id: string;
 }): ReactNode {
-  const [eduData, setEduData] = useState<educationEntry[]>([]);
-
-  useEffect(() => {
-    educationData.then((data) => setEduData(data));
-  }, [educationData]);
-
   return (
     <>
       <div className="flex flex-col w-full m-10 ml-5 w-full" id={id}>
         <h1 className="font-mono text-4xl">{`Education`}</h1>
         <div className="border-1 w-6/7 border-violet-600" />
-        {eduData.map((value) => (
+        {educationData.map((value) => (
           <EducationQualificationCard educationEntry={value} />
         ))}
       </div>

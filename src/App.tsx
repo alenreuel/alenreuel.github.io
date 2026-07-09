@@ -13,26 +13,21 @@ import { ProjectsPage } from "./pages/projects";
 import { Profile, ProfileSmallScreen } from "./pages/profile";
 import { Anchor, ConfigProvider } from "antd";
 import { SkillsTab } from "./pages/skills";
+import educationData from "./data/education.json";
+import workData from "./data/work.json";
+import projectsData from "./data/projects.json";
+import bioData from "./data/bio.json";
+import skillsData from "./data/skills.json";
 const { Link } = Anchor;
 
 function App() {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const eduEntry: Promise<educationEntry[]> = fetch(
-    "/data/education.json",
-  ).then((response) => response.json());
-  const workEntry: Promise<workExp[]> = fetch("/data/work.json").then(
-    (response) => response.json(),
-  );
-  const projectsEntry: Promise<projects[]> = fetch("/data/projects.json").then(
-    (response) => response.json(),
-  );
-  const bio: Promise<profile> = fetch("/data/bio.json").then((response) =>
-    response.json(),
-  );
-  const skills: Promise<skill[]> = fetch("/data/skills.json").then((response) =>
-    response.json(),
-  );
+  const eduEntry = educationData as educationEntry[];
+  const workEntry = workData as workExp[];
+  const projectsEntry = projectsData as projects[];
+  const bio = bioData as profile;
+  const skills = skillsData as skill[];
 
   const Skills = () => (
     <div className=" lg:col-span-3 border-1 h-full overflow-hidden ml-0 bg-gray-100 hidden lg:block ">

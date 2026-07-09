@@ -5,7 +5,7 @@ import {
   LockOutlined,
   LinkOutlined,
 } from "@ant-design/icons";
-import { useEffect, useState, type ReactNode, Suspense } from "react";
+import { useState, type ReactNode, Suspense } from "react";
 import type { projects } from "@/types";
 import { Separator } from "@/components/ui/separator";
 
@@ -171,15 +171,9 @@ export function ProjectsPage({
   projectsData,
   id,
 }: {
-  projectsData: Promise<projects[]>;
+  projectsData: projects[];
   id: string;
 }): ReactNode {
-  const [projects, setProjects] = useState<projects[]>([]);
-
-  useEffect(() => {
-    projectsData.then((data) => setProjects(data));
-  }, [projectsData]);
-
   return (
     <>
       <div className="flex flex-col m-10 ml-5 w-full" id={id}>
@@ -187,12 +181,12 @@ export function ProjectsPage({
         <div className="border-1 w-6/7 border-violet-600" />
 
         <div className=" md:flex lg:flex flex-row flex-wrap w-6/7 justify-evenly gap-3 my-5 hidden md:block lg:block">
-          {projects.map((project, idx) => (
+          {projectsData.map((project, idx) => (
             <ProjectCard key={idx} project={project} />
           ))}
         </div>
         <div className=" flex flex-col gap-3 w-full lg:hidden md:hidden">
-          {projects.map((project, idx) => (
+          {projectsData.map((project, idx) => (
             <ProjectCardSmallScreen key={idx} project={project} />
           ))}
         </div>
