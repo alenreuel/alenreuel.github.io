@@ -25,7 +25,7 @@ function WorkExperienceCard({ workExp }: { workExp: workExp }): ReactNode {
             <div className="text-xs sm:text-m md:text-m lg:text-m font-mono font-light">{`${workExp.role}`}</div>
             <Separator />
             <div className="text-xs sm:text-m md:text-m lg:text-m font-mono py-2">
-              {`${workExp.responsibilites}`}
+              {`${workExp.responsibilities}`}
             </div>
           </div>
         </div>

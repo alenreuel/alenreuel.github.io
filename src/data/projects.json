@@ -1,12 +1,12 @@
 [
   {
     "projectName": "Skillspulse - AI Powered Learning Assistant",
-    "projectDescription": "An AI-powered browser extension that enables a personalized learning experience. It allows users to set personalized goals, summarize web content (including Youtube videos), generate customs tests and tracks user interaction metrics.",
+    "projectDescription": "An AI-powered browser extension that enables a personalized learning experience. It allows users to set personalized goals, summarize web content (including YouTube videos), generate custom tests and track user interaction metrics.",
     "imgURL": "/images/skillspulse.jpeg",
     "githubLink": "",
     "codeRestrictionReason": "NUS academic integrity policy — this was submitted coursework and cannot be made public.",
     "youtubeLink": "https://www.youtube.com/watch?v=zgIi6AIUF1c",
-    "skills": ["Langchain", "FastAPI", "React", "Docker"]
+    "skills": ["LangChain", "FastAPI", "React", "Docker"]
   },
   {
     "projectName": "Multi-Modal Representation Learning (CLIP)",
@@ -19,7 +19,7 @@
   },
   {
     "projectName": "Peer-to-Peer Maze Game",
-    "projectDescription": "A multi-player maze game built using Java that uses Remote Procedural Calls (RPCs) for P2P communication.",
+    "projectDescription": "A multi-player maze game built using Java that uses Remote Procedure Calls (RPCs) for P2P communication.",
     "imgURL": "https://lh3.ggpht.com/zLNDObYml4BKn4PbmDUC7HP_WNyODqzlEC0rK1wgWUk5bRGL4AMMaL5ugICGi_jteL1r1-UHWqL5P2Uzmac3DyzQRv55dFU7J5V_QA",
     "githubLink": "",
     "youtubeLink": "",
@@ -27,7 +27,7 @@
     "skills": [
       "Java",
       "Peer-to-Peer Architecture",
-      "Remote Procedural Calls(RPCs)",
+      "Remote Procedure Calls (RPCs)",
       "Distributed Computing"
     ]
   },
@@ -37,7 +37,7 @@
     "imgURL": "https://raw.githubusercontent.com/alenreuel/toDoList/refs/heads/main/images/uiScreenShot.png",
     "githubLink": "https://github.com/alenreuel/toDoList",
     "youtubeLink": "",
-    "skills": ["HTML", "Javascript", "CSS", "SQL", "Node.js"]
+    "skills": ["HTML", "JavaScript", "CSS", "SQL", "Node.js"]
   },
   {
     "projectName": "Brain Tumor Classification",
@@ -66,7 +66,7 @@
   },
   {
     "projectName": "ChatGPT Tweets Sentiment Analysis",
-    "projectDescription": "An application of sentiment analysis and topic modeling on 500,000 ChatGPT-related tweets to uncover tweeting pattern's about ChatGPT during it's initial release.",
+    "projectDescription": "An application of sentiment analysis and topic modeling on 500,000 ChatGPT-related tweets to uncover tweeting patterns about ChatGPT during its initial release.",
     "imgURL": "https://cdn.prod.website-files.com/61436206a95bd10922bde560/66d2148fae0a661745b4fa35_Sentiment%20analysis.png",
     "githubLink": "https://github.com/alenreuel/data_science_projects/blob/main/chatGPT_tweet_sentiment_analysis/ChatGPTSentiment_Analysis.ipynb",
     "youtubeLink": "",

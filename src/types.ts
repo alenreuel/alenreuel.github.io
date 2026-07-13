@@ -13,8 +13,8 @@ export type workExp = {
   start: number;
   end: number | string;
   role: string;
-  responsibilites: string;
-  jobResponsibilites: string[];
+  responsibilities: string;
+  jobResponsibilities: string[];
   imageURL: string;
 };
 
