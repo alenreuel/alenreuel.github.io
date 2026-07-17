@@ -94,7 +94,7 @@ export function ProfileSmallScreen({
                 }
               </Button>
             </SheetTrigger>
-            <SheetContent className="bg-gray-100 !w-2/5">
+            <SheetContent className="bg-gray-100 !w-2/5 overflow-hidden">
               <SheetHeader>
                 <SheetTitle>
                   {
@@ -106,7 +106,7 @@ export function ProfileSmallScreen({
                   }
                 </SheetTitle>
               </SheetHeader>
-              <div>
+              <div className="flex-1 min-h-0 overflow-scroll ">
                 <SkillsTab data={skills} />
               </div>
             </SheetContent>

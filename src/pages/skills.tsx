@@ -13,7 +13,7 @@ export function SkillsTab({ data }: { data: skill[] }): ReactNode {
   );
 
   return (
-    <div className="flex flex-col gap-2 mt-10 select-none">
+    <div className="flex flex-col gap-2 lg:mt-10 mt-2 h-full select-none overflow-auto">
       {skills.map((category) => (
         <div key={category}>
           <SkillHeader cat={category} />
